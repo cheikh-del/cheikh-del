@@ -1,0 +1,728 @@
+\documentclass{article}
+\usepackage{authblk}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{natbib} % package pour la gestion des références bibliographiques
+\usepackage[utf8]{inputenc}
+
+\title{REVUE : Le fascinant monde de l'équation de Landau–Lifshitz–Gilbert : un aperçu}
+\author{M. Lakshmanan\thanks{Centre de dynamique non linéaire, Département de physique, Université Bharathidasan, Tiruchirapalli 620 024, Inde}}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Introduction}
+	Les systèmes de spin font généralement référence aux systèmes magnétiques ordonnés. Plus précisément, le moment angulaire de spin ou le spin est une propriété intrinsèque associée aux particules quantiques, qui n'a pas de contrepartie classique. Macroscopiquement, toutes les substances sont magnétiques dans une certaine mesure et chaque matériau placé dans un champ magnétique acquiert un moment magnétique ou une magnétisation. Par analogie avec la relation entre le moment dipolaire d'une boucle de courant dans un champ magnétique et le moment angulaire orbital d'un électron en mouvement, on peut relier le moment magnétique/la magnétisation à la valeur d'attente de l'opérateur du moment angulaire de spin, que l'on peut simplement appeler spin. Dans les matériaux ferromagnétiques, le moment de chaque atome et même la moyenne ne sont pas nuls. Ces matériaux sont normalement constitués de domaines, qui présentent un ordre à longue portée qui fait que les spins des ions atomiques s'alignent parallèlement les uns aux autres dans un domaine. L'interaction sous-jacente \cite{reference} provient d'une interaction d'échange spin-spin qui est causée par le chevauchement des fonctions d'onde électroniques. Les interactions supplémentaires qui peuvent influencer les structures magnétiques comprennent l'anisotropie magnétocristalline, le champ magnétique appliqué, le champ de démagnétisation, l'échange biquadratique et d'autres interactions faibles. Sur des bases phénoménologiques, en incluant effectivement les types d'interactions ci-dessus, Landau \& Lifshitz \cite{landau} ont introduit l'équation dynamique de base pour la magnétisation ou le spin $S(\mathbf{r}, t)$ dans les matériaux en vrac, où l'effet des interactions relativistes a également été inclus comme terme d'amortissement. En 1954, Gilbert \cite{gilbert} a introduit une forme plus convaincante pour le terme d'amortissement, basée sur une approche lagrangienne, et la forme combinée est maintenant appelée l'équation de Landau-Lifshitz-Gilbert (LLG), qui est un système dynamique fondamental en magnétisme appliqué. 
+	
+	\section{Dynamique macroscopique des systèmes de spin et équation LLG}
+	Pour commencer, dans cette section, nous présenterons un bref exposé de la dérivation phénoménologique de l'équation LLG en partant de l'équation du mouvement d'un vecteur de magnétisation en présence d'un champ magnétique appliqué \cite{landau}. Ensuite, cette analyse est étendue au cas d'un réseau de spins et à sa limite continue, en incluant l'ajout d'un terme d'amortissement phénoménologique, pour obtenir l'équation LLG.	
+	\subsection*{(a) Dynamique d'un seul spin}
+	Considérons la dynamique de l'opérateur de moment angulaire de spin $S$ d'un électron libre sous l'action d'un champ magnétique externe dépendant du temps avec le terme Zeeman donné par l'hamiltonien
+	
+	\begin{equation}
+	K_5 = \frac{g\mu_B}{\hbar} S \cdot B(t), \quad B(t) = \mu_0 H(t),
+	\end{equation}
+	
+	où $g$, $\mu_B$ et $\mu_0$ sont respectivement le rapport gyromagnétique, le magnéton de Bohr et la perméabilité dans le vide. Ensuite, à partir de l'équation de Schrödinger, il est facile de montrer que la valeur d'attente de l'opérateur de spin satisfait l'équation dynamique, en utilisant les relations de commutation du moment angulaire, comme
+	
+	\begin{equation}
+	\frac{d}{dt} \langle S(t) \rangle = \frac{g\mu_B}{\hbar} \langle S(t) \rangle \times B(t).
+	\end{equation}
+	
+	Maintenant, considérons la relation entre le moment angulaire classique $L$ d'un électron en mouvement et le moment dipolaire $M_e$ d'une boucle de courant plongée dans un champ magnétique uniforme, $M_e = (e/2m) L$, où $e$ est la charge et $m$ est la masse de l'électron. De manière analogue, on peut définir la magnétisation $M = (g\mu_B/\hbar)\langle S \rangle \equiv \gamma \langle S \rangle$, où $g = g\mu_B/\hbar$. Ensuite, en considérant la magnétisation par unité de volume, $M$, à partir de l'équation (2.2), on peut écrire l'équation d'évolution pour la magnétisation comme
+	
+	\begin{equation}
+	\frac{dM}{dt} = -\gamma_0 [M(t) \times H(t)],
+	\end{equation}
+	
+	où $B = \mu_0 H$ et $\gamma_0 = \mu_0 \gamma$.
+	
+	À partir de l'équation (2.3), il est évident que $M \cdot M = \text{const.}$ et $M \cdot H = \text{const.}$. Par conséquent, la magnitude du vecteur de magnétisation reste constante dans le temps, tandis qu'elle tourne autour du champ magnétique $H$ en faisant un angle constant avec celui-ci. En définissant le vecteur de spin unitaire
+	
+	\begin{equation}
+	S(t) = \frac{M(t)}{|M(t)|}, \quad S^2 = 1, \quad \text{et} \quad S = (S^x, S^y, S^z),
+	\end{equation}
+	
+	que nous appellerons simplement spin par la suite, on peut écrire l'équation du mouvement du spin comme
+	
+	\begin{equation}
+	\frac{dS(t)}{dt} = -\gamma_0 [S(t) \times H(t)],
+	\end{equation}
+	
+	et l'évolution du spin peut être représentée schématiquement comme dans la figure 1a.
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.5\textwidth]{C:/Users/Cheikh/Pictures/LLG/im1.png}
+		\caption{Évolution d'un seul spin (a) en présence d'un champ magnétique et (b) lorsque l'amortissement est inclus.}
+		\label{fig:spin_evolution}
+	\end{figure}
+	
+	Il est bien connu que les courbes d'hystérésis expérimentales des substances ferromagnétiques montrent clairement qu'au-delà de certaines valeurs critiques du champ magnétique appliqué, la magnétisation se sature, devient uniforme et s'aligne parallèlement au champ magnétique. Afin d'incorporer ce fait expérimental, à partir de bases phénoménologiques, on peut ajouter un terme d'amortissement suggéré par Gilbert \cite{gilbert} de sorte que l'équation du mouvement puisse être écrite comme
+	\begin{equation}
+	\frac{d\mathbf{S}(t)}{dt} = -\gamma_0[\mathbf{S}(t) \times \mathbf{H}(t)] + \lambda\mu_0 S \times \frac{dS}{dt}, \quad \lambda \ll 1
+	\end{equation}
+	
+	En substituant à nouveau l'expression (2.6) pour $\frac{dS}{dt}$ dans le troisième terme de l'équation (2.6), on peut la réécrire comme
+	\begin{equation}
+	(1+\lambda^2\gamma_0)\frac{d\mathbf{S}}{dt} = -\gamma_0[\mathbf{S}(t) \times \mathbf{H}(t)] - \lambda \gamma_0 \mathbf{S} \times [\mathbf{S} \times \mathbf{H}(t)]
+	\end{equation}
+	
+	Après une mise à l'échelle appropriée de $t$, l'équation (2.6) peut être réécrite comme
+	\begin{equation}
+	\frac{d\mathbf{S}}{dt} = (\mathbf{S} \times \mathbf{H}(t)) + \lambda \mathbf{S} \times (\mathbf{S} \times \mathbf{H}(t)) = \mathbf{S} \times \mathbf{H}_{\text{eff}}
+	\end{equation}
+	
+	Où $\mathbf{H}_{\text{eff}} = \mathbf{H}(t) + \lambda \mathbf{S} \times \mathbf{H}$. L'effet de l'amortissement est montré dans la figure \ref{fig:spin_evolution}(b). Remarquez que dans l'équation (2.7) encore la constance de la longueur du spin est maintenue. L'équation (2.7) est la forme la plus simple de l'équation LLG, qui représente la dynamique d'un seul spin en présence d'un champ magnétique appliqué $\mathbf{H}(t)$.
+	
+	\textbf{(b) Dynamique du réseau de spins et cas continu}
+	
+	L'analyse phénoménologique ci-dessus peut être facilement étendue à un réseau de spins représentant un matériau ferromagnétique. Pour simplifier, en considérant un réseau unidimensionnel de $N$ spins avec des interactions entre voisins les plus proches, une anisotropie sur site, un champ de démagnétisation, un champ magnétique appliqué, etc., la dynamique du $i$-ème spin peut être écrite par analogie avec le spin unique comme l'équation LLG.
+	\begin{align}
+	\frac{{d\mathbf{S}_i}}{{dt}} &= \mathbf{S}_i \times \mathbf{H}_{\text{eff}}, \quad i = 1, 2, \ldots, N, \quad (2.9) \nonumber \\
+	&\text{où} \quad \mathbf{H}_{\text{eff}} = \left( \mathbf{S}_{i+1} + \mathbf{S}_{i-1} + AS_{i}^{x}\mathbf{n}_x + BS_{i}^{y}\mathbf{n}_y + CS_{i}^{z}\mathbf{n}_z + H(t) + \ldots \right) \nonumber \\
+	&\quad - l \left\{ \mathbf{S}_{i+1} + \mathbf{S}_{i-1} + AS_{i}^{x}\mathbf{n}_x + BS_{i}^{y}\mathbf{n}_y + CS_{i}^{z}\mathbf{n}_z + H(t) + \ldots \right\} \times \mathbf{S}_i. \quad (2.10) \nonumber \\
+	&\text{Ici} \quad A, B, C \text{ sont des paramètres d'anisotropie et } \mathbf{n}_x, \mathbf{n}_y, \mathbf{n}_z \text{ sont des} \nonumber \\
+	&\text{vecteurs unitaires le long des} \nonumber \\
+	&x, y \text{ et } z \text{ directions, respectivement.} \nonumber \\
+	\begin{split}
+	&\text{On peut inclure d'autres types d'interactions comme l'échange biquadratique,} \\
+	&\text{le couplage spin-phonon, les interactions dipolaires, etc.} \nonumber \\
+	&\text{De plus, l'équation (2.9) peut être généralisée au cas de réseaux carrés et cubiques}  \nonumber \\
+	&\text{aussi, où l'indice } i \text{ doit être remplacé par le vecteur de réseau approprié } i. \nonumber \\
+	&\text{Dans la limite des longueurs d'onde longues et des basses températures,} \nonumber \\
+	&\text{c'est-à-dire dans la limite continue, on peut écrire}
+	\end{split} \nonumber \\
+	&\mathbf{S}_i(t) = \mathbf{S}(r, t), \quad r = (x, y, z) \nonumber \\
+	&\text{et} \quad \mathbf{S}_{i+1} + \mathbf{S}_{i-1} = \mathbf{S}(r, t) + a \cdot \mathbf{VS} + \frac{a^2}{2}V^2S + \text{orders supérieurs} \nonumber \\
+	&(a \text{ est un vecteur de réseau}) \nonumber \\
+	&\text{de sorte que l'équation LLG prend la forme d'une équation différentielle } \nonumber \\
+	&\text{partielle vectorielle non linéaire (comme}a \rightarrow 0), \nonumber \\
+	\frac{\partial \mathbf{S}(r, t)}{\partial t} &= \left( \mathbf{S} \times \left[ V^2\mathbf{S} + AS_x \mathbf{n}_x + BS_y \mathbf{n}_y + CS_z \mathbf{n}_z + H(t) + \ldots \right] \right) \nonumber \\
+	&+ l \left[ \left( V^2\mathbf{S} + AS_x \mathbf{n}_x + BS_y \mathbf{n}_y + CS_z \mathbf{n}_z + H(t) + \ldots \right) \times \mathbf{S}(r, t) \right] \nonumber \\
+	&= \mathbf{S} \times \mathbf{H}_{\text{eff}}. \quad (2.12) \nonumber \\
+	&\text{et} \quad \mathbf{S}(r, t) = (S_x(r, t), S_y(r, t), S_z(r, t)), \quad S^2 = 1. \quad (2.13) \nonumber
+	\end{align}
+	
+	En fait, l'équation (2.12) a été déduite à partir de bases phénoménologiques pour les matériaux magnétiques en vrac par Landau \& Lifshitz \cite{landau}.
+	\textbf{(c) Structure hamiltonienne de l'équation LLG en l'absence d'amortissement}
+	Les équations dynamiques pour le réseau de spins (2.9) en une dimension (ainsi que dans des dimensions supérieures) possèdent une structure hamiltonienne en l'absence d'amortissement. \\
+	En définissant l'Hamiltonien de spin \newline
+	\begin{align*}
+	H_s = - \sum_{\langle i,j \rangle} S_i \cdot S_{i+1} + A(S_{ix})^2 + B(S_{iy})^2 + C(S_{iz})^2 + m(H(t) \cdot S_i) + \ldots \quad (2.14) 
+	\end{align*} \\
+	et les crochets de Poisson de spin entre deux fonctions de spin $A$ et $B$ comme
+	\newline \newline
+	\begin{align*}
+	\centering
+	\{A, B\} = \sum_{\alpha,\beta,\gamma=1}^3 \varepsilon_{\alpha\beta\gamma} \frac{\partial A}{\partial S^{\alpha}} \frac{\partial B}{\partial S^{\beta}} S^{\gamma}, \quad (2.15)
+	\end{align*}
+	
+	On peut obtenir l'équation d'évolution (2.9) pour $l = 0$ à partir de $\frac{d\mathbf{S}_i}{dt} = \{\mathbf{S}_i, H_s\}$. Ici $\epsilon_{abg}$ est le tenseur de Levi-Civita. De même pour le cas continu, on peut définir la densité d'Hamiltonien de spin
+	\[
+	H_s = \frac{1}{2} \left[(\mathbf{VS})^2 + A(S_x)^2 + B(S_y)^2 + C(S_z)^2 + (\mathbf{H} \cdot \mathbf{S}) + H_{\text{demag}} + \cdots \right] \tag{2.16}
+	\]
+	avec la relation de crochet de Poisson
+	\[
+	\{\mathbf{S}^{\alpha}(\mathbf{r}, t), \mathbf{S}^{\beta}(\mathbf{r}', t')\} = \epsilon_{\alpha\beta\gamma} S^{\gamma}(\mathbf{r} - \mathbf{r}', t - t') \tag{2.17}
+	\]
+	et déduire l'équation d'évolution du champ de spin (2.12) pour $l = 0$.
+	
+	En définissant l'énergie comme
+	\[
+	E = \frac{1}{2} \int d^3r \left[(\mathbf{VS})^2 + A(S^{x})^2 + B(S^{y})^2 + C(S^{z})^2 + \mathbf{H} \cdot \mathbf{S} + \cdots \right] \tag{2.18}
+	\]
+	on peut facilement vérifier que
+	\[
+	\frac{dE}{dt} = -l \lvert \mathbf{S}_t \rvert^2 \int d^3r.
+	\]
+	Ensuite, lorsque $l > 0$, le système est dissipatif, tandis que pour $l = 0$, le système est conservatif.
+	
+	\section{Effet de couple de spin et équation LLG généralisée}
+	
+	Considérez la dynamique du spin dans un film nanoferromagnétique sous l'action d'un courant de spin \cite{ref5,ref6}. Ces derniers temps, il a été réalisé que si le courant est polarisé en spin, le transfert d'un fort courant à travers le film entraîne un transfert de moment angulaire de spin aux atomes du film. Cela s'appelle l'effet de couple de spin et constitue l'une des idées de base du domaine émergent de la spintronique. La configuration typique du pilier de vanne nanospin comprend deux couches ferromagnétiques, l'une une longue couche ferromagnétique ancrée, et la deuxième d'une longueur beaucoup plus petite, séparées par une couche conductrice d'espacement \cite{ref6}, toutes de taille nanométrique. La couche ancrée agit comme un réservoir de courant polarisé en spin qui, en traversant le conducteur et la couche ferromagnétique, induit un couple effectif sur la magnétisation de spin dans le film ferromagnétique, entraînant un basculement rapide de la direction de spin du film. De manière intéressante, d'un point de vue semiclassique, l'effet de transfert de moment de spin est décrit par une version généralisée de l'équation LLG (2.12), comme le montrent Berger \cite{ref7} et Slonczewski \cite{ref8}. Sa forme se lit
+	\begin{equation}
+	\frac{\partial \mathbf{S}}{\partial t} = \mathbf{S} \times [\mathbf{H}_{\text{eff}} + \mathbf{S} \times \mathbf{j}], \quad \mathbf{S} = (S^{x}, S^{y}, S^{z}) \quad \text{et} \quad \lvert \mathbf{S} \rvert^2 = 1, \tag{3.1}
+	\end{equation}
+	où le terme de courant de spin
+	\begin{equation}
+	\mathbf{j} = \frac{a\mathbf{S}_P}{f(P)(3 + \mathbf{S} \cdot \mathbf{S}_P)}, \quad f(P) = \left(\frac{(1 + P^3)}{4P^{\frac{3}{2}}}\right)
+	\end{equation}
+	Ici, $\mathbf{S}_P$ est la direction ancrée du courant de spin polarisé qui est normalement prise comme perpendiculaire à la direction du courant, $a$ est un facteur constant lié à la force du courant de spin et $f(P)$ est le facteur de polarisation déduit par Slonczewski \cite{ref8} à partir d'arguments semiclassiques. D'après une expérience...
+	
+	\section{Effet de couple de spin et équation LLG généralisée}
+	
+	Point de vue valable pour de nombreux matériaux ferromagnétiques, on argumente qu'il suffit d'approximer le terme de courant de spin simplement comme
+	\[
+	\mathbf{j} = a\mathbf{S}_p \tag{3.3}
+	\]
+	de sorte que l'équation LLG pour l'effet de couple de spin peut être efficacement écrite comme
+	\[
+	\frac{\partial \mathbf{S}}{\partial t} = \mathbf{S} \times [\mathbf{H}_{\text{eff}} + a\mathbf{S} \times \mathbf{S}_p], \tag{3.4}
+	\]
+	où
+	\[
+	\mathbf{H}_{\text{eff}} = \left(\mathbf{V}^2\mathbf{S} + A\mathbf{S}^{x}\mathbf{i} + B\mathbf{S}^{y}\mathbf{j} + C\mathbf{S}^{z}\mathbf{k} + \mathbf{H}_{\text{demag}} + \mathbf{H}(t) + \cdots \right) - l\mathbf{S} \times \frac{\partial \mathbf{S}}{\partial t}. \tag{3.5}
+	\]
+	Notez que dans le cas présent, en utilisant l'expression d'énergie (2.18), on peut prouver que
+	\[
+	\frac{dE}{dt} = [-l|\mathbf{S}_t|^2 + a(\mathbf{S}_t \times \mathbf{S}) \cdot \mathbf{S}_p]d^3r. \tag{3.6}
+	\]
+	Cela implique que l'énergie ne diminue pas nécessairement le long des trajectoires. Par conséquent, de nombreuses caractéristiques dynamiques intéressantes du spin peuvent être attendues en présence du terme de courant de spin.
+	
+	Afin de réaliser ces effets de manière plus transparente, réécrivons l'équation LLG généralisée (3.4) en termes de la variable stéréographique complexe
+	$u(\mathbf{r}, t)$ \cite{ref9} comme
+	\[
+	u = \frac{S^{x} + iS^{y}}{1 + S^{z}} \tag{3.7a}
+	\]
+	et
+	\begin{align*}
+	S^{x} &= u + u^*\left(1 + uu^*\right), \\
+	S^{y} &= i\left(\frac{1}{1 + uu^*}\right)(u - u^*), \\
+	S^{z} &= \left(\frac{1}{1 + uu^*}\right)(1 - uu^*).
+	\end{align*}
+	de sorte que l'équation (3.2) peut être réécrite (pour simplicité $\mathbf{H}_{\text{demag}} = 0$)
+	\begin{align*}
+	i(1 - il)\omega_t + \mathbf{\nabla}^2\omega - 2\omega^*(\mathbf{\nabla\omega})^2(1 + uu^*) + A\frac{1}{2}(1 - \omega^2)(\omega + \omega^*)(1 + \omega\omega^*) \\
+	+ B\frac{1}{2}(1 + \omega^2)(\omega - \omega^*)(1 + \omega\omega^*) - C\left(1 - \frac{1}{1 + uu^*}\omega\omega^*\right)\omega + \frac{1}{2}i(H^{x} - ij^{x})(1 - \omega^2)\\
+	+ \frac{1}{2}i(H^{y} + ij^{y})(1 + \omega^2) - (H^{z} + ij^{z})\\ 
+	\omega &= 0 \tag{3.8},
+	\end{align*}
+	où $j = a\mathbf{S}_p$ et $\omega_t = \left(\frac{\partial\omega}{\partial t}\right)$.
+	
+	Il est clair à partir de l'équation (3.8) que l'effet du terme de courant de spin $\mathbf{j}$ est simplement de changer le champ magnétique $\mathbf{H} = (H^{x}, H^{y}, H^{z})$ comme $(H^{x} - ij^{x}, H^{y} + ij^{y}, H^{z} + ij^{z})$. Par conséquent, l'effet du courant de spin est effectivement équivalent à un champ magnétique, bien que complexe. La conséquence est que le courant de spin peut remplir la fonction du champ magnétique peut-être de manière plus efficace en raison du terme imaginaire.
+	
+	Pour voir cela dans une situation simple, considérons le cas d'un film ferromagnétique homogène de sorte qu'il n'y ait pas de variation spatiale et l'anisotropie et
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.5\textwidth]{C:/Users/Cheikh/Pictures/LLG/im2.png}
+		\caption{Basculement de spin dû au courant de spin en présence d'anisotropie [10].}
+		\label{fig:spin_evolution}
+	\end{figure}
+	
+	Les champs de désaimantation sont absents, c'est-à-dire que nous avons
+	\[
+	(1 - i\lambda)\omega_t = -(a - iH^{z})\omega. (3.9)
+	\]
+	Ensuite, après intégration, on obtient
+	\begin{align*}
+	\omega(t) &= \omega(0) \exp \left(-\frac{(a - iH^{z})t}{(1 - i\lambda)}\right)\\
+	&= \omega(0) \exp \left(-\frac{(a + \lambda H^{z})t}{(1 + |\lambda|^{2})}\right) \exp \left(\left(-i\frac{(a\lambda -H^{z})t}{(1 + |\lambda|^{2})}\right)\right). (3.10)
+	\end{align*}  
+	De toute évidence, le premier exposant décrit une relaxation ou un basculement du spin, tandis que le deuxième terme décrit une précession. À partir du premier exposant dans l'équation (3.10), il est clair que l'échelle de temps du basculement est donnée par \(\frac{(1 + |\lambda|^2)}{(a + \lambda H^{z})}\). Ici, \(\lambda\) est petit, ce qui implique que le terme de couple de spin est plus efficace pour basculer le vecteur de magnétisation. De plus, en laissant le terme \(H_z\) devenir nul, on note qu'en présence d'un terme d'amortissement, le transfert de spin produit l'effet double de précession et de dissipation.
+	
+	Dans la figure 2, nous soulignons clairement comment l'effet du courant de spin augmente le taux de basculement du spin même en présence d'anisotropie. De plus, on peut montrer qu'un scénario de bifurcation intéressant, comprenant des bifurcations par doublement de période vers un comportement chaotique, se produit en utilisant un champ magnétique appliqué périodiquement en présence d'un champ magnétique constant et d'un courant de spin constant \cite{ref10}. Bien qu'un courant de spin variant périodiquement puisse également conduire à un tel scénario de bifurcation \cite{ref11}, nous croyons que la technique d'application d'un champ magnétique périodique en présence d'un courant de spin constant est beaucoup plus réalisable expérimentalement. Pour réaliser cela, on peut prendre \cite{ref12}
+	\[
+	H_{\text{eff}} = k(S \cdot e_{||})e_{||} + H_{\text{demag}} + H(t),\qquad \qquad \qquad \qquad \qquad \qquad (3.11)
+	\]
+	où \(k\) est le paramètre d'anisotropie et \(e\) est le vecteur unitaire le long de l'axe d'anisotropie et
+	\[
+	H_{\text{demag}} = -4\pi(N_1S^{x}i + N_2S^{y}j + N_3S^{z}k). \qquad \qquad \qquad \qquad \qquad \qquad (3.12)
+	\]
+	
+	
+	\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{C:/Users/Cheikh/Pictures/LLG/im3.png}
+	\caption{Diagramme de bifurcation correspondant à l'équation (3.14). Ici, \(h_{a3} = H^{z}\) [12]. (Version en ligne en couleur.)
+	}
+	\label{fig:spin_evolution}
+	\end{figure}
+
+   En choisissant
+   \[
+   \mathbf{H}(t) = (0, 0, H^{z}) \quad \text{et} \quad \mathbf{e} = (\sin \theta_{||} \cos \phi_{||}, \sin \theta_{||} \sin \phi_{||}, \cos \theta_{||}), \quad (3.13)
+   \]
+   l'équation LLG en variable stéréographique peut être écrite (en l'absence
+   du terme d'échange) comme \cite{ref10,ref12}
+   \begin{multline}
+   (1 - i\lambda)\omega_t = -\gamma(a - iH^z)\omega + iS_{||}K\left[\gamma \cos\theta_{||} \omega - \frac{1}{2} \sin\theta_{||}(e^{i\phi_{||}} - \omega^2 e^{-i\phi_{||}})\right] \\
+   - \frac{i4\pi \gamma}{(1 + |\omega|^{2})}\left [N_3(1 - |\omega|^2)\omega - \frac{N_1}{2}(1 - \omega^2 - |\omega|^2)\omega  \right. \\
+   \left. - \frac{N_2}{2}(1 + \omega^2 - |\omega|^2)\omega - \frac{N_1 - N_2}{2} \overline{\omega}\right], \quad (3.14)
+   \end{multline}
+   
+   où \(S_{||} = \mathbf{S} \cdot \mathbf{e_{||}}\). En résolvant cette équation numériquement, on peut montrer que
+   l'équation (3.9) présente une bifurcation typique par doublement de période vers le chaos comme
+   montré dans la figure 3.
+   
+   L'existence d'oscillations de spin périodiques et chaotiques dans un oscillateur de transfert de spin nanométrique (STO) homogène ouvre d'autres possibilités passionnantes. Par exemple,
+   un réseau/matériau de STO peut conduire à la possibilité d'une puissance micro-onde synchronisée
+   ou d'oscillations chaotiques synchronisées \cite{ref13}. De telles études sont en cours.
+   D'autres possibilités incluent l'étude de films inhomogènes (comprenant des variations spatiales)
+   et des réseaux discrets, y compris en dimensions supérieures \cite{ref14}.\newline
+   
+   \textbf{4. Réseau de spins d'Heisenberg anisotropes}
+   
+   Ensuite, nous considérons la dynamique d'un système de spins d'Heisenberg anisotropes discrets sans amortissement. Considérons le hamiltonien
+   \[
+   H = -\sum_{n}(AS_{n}^{x}S_{n+1}^{x} + BS_{n}^{y}S_{n+1}^{y} + CS_{n}^{z}S_{n+1}^{z}) - D \sum_{n}(S_{n}^{z})^2 - \mathbf{H} \cdot \sum_{n}\mathbf{S}_n
+   \]
+   
+   de sorte que l'équation du mouvement devienne (en utilisant les relations de crochets de Poisson (2.15))
+   
+   \begin{align*}
+   \frac{d\mathbf{S}_n}{dt} &= \mathbf{S}_n \times \left[A(S_{n+1}^{x} +  S_{n-1}^{x})\mathbf{i} + B(S_{n+1}^{y} + S_{n-1}^{y})\mathbf{j} + C(S_{n+1}^{z} + 
+   S_{n-1}^{z})\mathbf{k} + 2DS_{n}^{z}\mathbf{k}\right] \\
+   &\quad + \mathbf{S}_n \times \mathbf{H}, \quad n = 1, 2, 3, \ldots, N.
+   \end{align*}
+   
+   Récemment \cite{ref15,ref16}, il a été découvert que le système couplé (4.2) admet plusieurs classes de solutions exactes, bien que le système ne soit pas complètement intégrable pour tout choix des paramètres, y compris le cas purement isotropique (A = B = C = 1, D = 0, $\mathbf{H} = 0$).
+   
+   Les classes de solutions exactes de l'équation (4.2) sont les suivantes.
+   
+   (a) Solution homogène spatialement dépendante du temps
+   \begin{align*}
+   S_{n}^{x} &= -\sqrt{1 - \gamma^2k^{'2}}\operatorname{sn}(ut + \delta, k),\qquad (4.3a)\\
+   S_{n}^{y} &= \sqrt{1 - \gamma^2}\operatorname{cn}(\omega t + \delta, k), \qquad \qquad (4.3b)\\
+   S_{n}^{z} &= \gamma \operatorname{dn}(\omega t + \, k), \qquad \qquad \qquad \qquad (4.3c)
+   \end{align*}\\
+   o\`{u} la fréquence
+   \[
+   \omega = 2\gamma\sqrt{(B - C)(A - C)} \quad \text{et} \quad k^2 = \frac{ 1 - \gamma^2}{\gamma^{2}}\frac{(B - A)}{(A - C)}.  \qquad (4.4)
+   \]
+   
+   Ici, \(\gamma\) et \(\delta\) sont des paramètres arbitraires et \(k\) est le module des fonctions elliptiques de Jacobi.
+   
+   (b) Solutions périodiques dans l'espace et dépendantes du temps
+   \begin{align*}
+   S_{n}^x &= (-1)^{n+1}\sqrt{1 - \gamma^2k^{'2}}\operatorname{sn}(ut + \delta, k),   \qquad (4.5a)\\
+   S_{n}^{y} &= (-1)^n\sqrt{1 - \gamma^2}\operatorname{cn}(\omega t + \delta, k),\qquad \qquad (4.5b) \\
+   S_{n}^{z} &= \gamma \operatorname{dn}(\omega t + \, k), \qquad \qquad \qquad \qquad \qquad (4.5c)
+   \end{align*}
+   où
+   \[
+   \omega = 2\gamma\sqrt{(B - C)(A - C)}  \quad \text{et} \quad k^2 = \frac{ 1 - \gamma^2}{\gamma^{2}}\frac{(B - A)}{(A + C)}. \qquad (4.5d)
+   \]
+   
+   Cette solution correspond à un magnon non linéaire.
+   
+   (c) Solutions magnon linéaires
+   
+   Dans le cas anisotrope uniaxial $A = B < C$, la solution magnon linéaire est
+   \begin{align*}
+  S_{n}^{x} &= 1 - \gamma^2 \sin(pn - \omega t + \delta), & (4.6a) \\
+  S_{n}^{y} &= 1 - \gamma^2 \cos(pn - \omega t + \delta), & (4.6b) \\
+  S_{n}^{z} &= \gamma, & (4.6c)
+  \end{align*}
+   avec la relation de dispersion
+   \[
+  \omega = 2\gamma(C - A \cos p). \quad (4.7)
+  \]
+   
+   (d) Structures statiques non planes pour les modèles XYZ et XYY
+   
+   Dans ce cas, nous avons les structures périodiques
+  \begin{align*}
+  S_{n}^{x} &= \sqrt{1 - \gamma^2 k^2} \operatorname{sn}(pn + \delta, k), & (4.8a) \\
+  S_{n}^{y} &= \sqrt{1 - \gamma^2} \operatorname{cn}(pn + \delta, k), & (4.8b) \\
+  S_{n}^{z} &= g \operatorname{dn}(pn + \delta, k), & (4.8c)
+  \end{align*}
+   où
+   \[
+   k^2 = \frac{A^2 - B^2}{A^2 - C^2} \quad \text{et} \quad \operatorname{dn}(p, k) = \frac{B}{A}. \quad (4.8d)
+   \]
+   
+   Dans le cas limite $k = 1$, on peut obtenir la solution de soliton unique localisée (onde solitaire)
+   \[
+  S_{n}^{x} = \tanh(pn + \delta), \quad S_{n}^{y} = \sqrt{1 - g^2} \operatorname{sech}(pn + \delta), \quad \text{and} \quad S_{nz} = g \operatorname{sech}(pn + \delta). \quad (4.9)
+  \]
+   
+   (e) Cas plan (XY)
+   
+   Cas (i): $S_{n}^{x} = \operatorname{sn}(pn + \delta, k), \quad S_{n}^{y} = \operatorname{cn}(pn + \delta, k)$ and $S_{n}^{z} = 0$, \quad (4.10)
+   where $\operatorname{dn}(p, k) = \frac{B}{A}$. Dans le cas limite, $k = 1$, nous avons la solution de l'onde solitaire
+  \[
+  S_{n}^{x} = \tanh(pn + \delta), \quad S_{n}^{y} = \operatorname{sech}(pn + \delta), \quad \text{and} \quad S_{n}^{z} = 0. \quad (4.11)
+  \]
+   
+   Cas (ii): $S_{n}^{x} = k\operatorname{sn}(pn + \delta, k), \quad S_{n}^{z} = \operatorname{dn}(pn + \delta, k)$ and $S_{n}^{y} = 0$, \quad (4.12) \newline \newline
+   where $\operatorname{cn}(p, k) = \frac{C}{A}$. Dans la limite $k = 1$, nous avons
+    \[
+   S_{n}^{x} = \tanh(pn + \delta), \quad S_{n}^{y} = 0, \quad \text{and} \quad S_{n}^{z} = \operatorname{sech}(pn + \delta). \quad (4.13)
+   \]
+   
+   Nous avons
+   \begin{align*}
+   S_{n}^{x} &= \operatorname{cn}(pn + \delta, k), & S_{n}^{y} &= \gamma \operatorname{sn}(pn + \delta, k), & S_{n}^{z} &= 1 - g^2 \operatorname{sn}(pn + \delta, k), \quad (4.14) \\
+   \text{où} \quad \operatorname{dn}(p, k) &= \frac{A}{B}. \nonumber \\
+   \end{align*}
+   
+   Dans le cas limite, nous avons la structure de paroi de domaine
+  \begin{align*}
+  S_{n}^{x} &= \operatorname{sech}(pn + \delta), & S_{ny} &= \gamma \tanh(pn + \delta), & S_{n}^{z} &= 1 - g^2 \tanh(pn + \delta). \quad (4.15) \nonumber \\
+  \end{align*}
+   
+   Dans tous les cas ci-dessus, on peut évaluer les énergies associées aux différentes structures et leurs propriétés de stabilité linéaire. Pour plus de détails, on peut se référer à Lakshmanan \& Saxena [15].
+   
+   (g) Solutions en présence d'anisotropie de site et champ magnétique externe constant
+   
+   (i) Anisotropie de site, $D \neq 0$, $H = 0$, $A$, $B$, $C \neq 0$
+   
+   Les trois types de solutions (4.3), (4.5) et (4.6) existent également ici, sauf que le paramètre $C$ doit être remplacé par $(C - D)$ dans chacune de ces équations du côté droit.
+   
+   (ii) Cas de champ externe constant, $H = (H_x, 0, 0)$, $B = C = A$, $D = 0$
+   
+   Une solution exacte est
+   \begin{align*}
+   S_{n}^{x} &= \operatorname{sn}(pn + \delta, k), & (4.16a) \\
+   S_{n}^{y} &= \sin(\omega t + \gamma) \operatorname{cn}(pn + \delta, k), & (4.16b) \\
+   S_{n}^{z} &= \cos(\omega t + \gamma) \operatorname{cn}(pn + \delta, k), & (4.16c) \nonumber \\
+   \end{align*}
+   où $\operatorname{dn}(p, k) = \frac{C}{A}$ et $u = H_x$.
+   
+   On peut étudier la stabilité linéaire des solutions statiques et étudier l'existence de la barrière de Peierls-Nabarro, c'est-à-dire si l'énergie totale du réseau dépend de l'emplacement du soliton ou non ; pour plus de détails, voir [15].
+   
+   (h) Intégrabilité du cas statique
+   
+   Granovskii \& Zhedanov [17] ont montré que le cas statique du système anisotrope pur
+   \[
+   \mathbf{S}_n \times \left[A(S_{n+1}^{x} + S_{n-1}^{x}) + B(S_{n+1}^{y} + S_{n-1}^{y}) + C(S_{n+1}^{z} + S_{n-1}^{z})\right] = 0 \quad (4.17)
+   \]
+   est équivalent à une version discrétisée de l'équation de Schrödinger avec un potentiel de type Bargmann à deux niveaux ou un analogue discret du système de Neumann [18] et est intégrable.
+   
+   (i) Chaîne de spin d'Ishimori
+   Il existe une chaîne de spin mathématiquement intéressante qui est complètement intégrable et qui a été introduite par Ishimori [19]. En partant d'un hamiltonien
+   \[
+   H = -\log(1 + \mathbf{S}_n \cdot \mathbf{S}_{n+1}),
+   \]
+   l'équation de spin devient
+   \[
+  \dot{\mathbf{S}}_n = \mathbf{S}_n \times \left(1 + \mathbf{S}_n \cdot \mathbf{S}_{n+1}\right)\mathbf{S}_{n+1} + \left(1 + \mathbf{S}_n \cdot \mathbf{S}_{n-1}\right)\mathbf{S}_{n-1}. \qquad \qquad \qquad (4.18)
+  \]
+   
+   Il admet une paire de Lax et est donc complètement intégrable. Cependant, aucun autre système de spin réaliste n'est connu pour être complètement intégrable. Il est intéressant de noter que l'équation (4.18) conduit également à une application réversible intégrable. En supposant une dépendance temporelle simple,
+   \[
+  \mathbf{S}_n(t) = (\cos \phi_n \cos \omega t, \cos \phi_n \sin \omega t, \sin \phi_n), \qquad \qquad \qquad \qquad \qquad \qquad (4.19)
+  \]
+   Quispel et al. [20] ont montré que l'équation (4.18) se réduit à l'application intégrable
+  \[
+  x_{n+1} = \left[2x_n^3 + \omega x_n^2 + 2x_n - \omega - x_{n-1} \right] \times
+  \]
+  \[
+  \left(-x_n^4 - ux_n^3 + \omega x_n
+  + 1\right)^{-1} \times \left[-x_n^4 - \omega x_n^3 + \omega x_n + 1 - x_{n-1}(\omega x_n^4 - 2x_n^3 - \omega x_n^2 - 2x_n)\right]^{-1}.
+  \]\qquad (4.20)
+   
+   Enfin, il est également intéressant de noter que l'on peut prouver l'existence d'excitations localisées, en utilisant un théorème de la fonction implicite, de la magnétisation inclinée ou de respirateurs discrets (les soi-disant modes localisés non linéaires) dans une chaîne de spin de Heisenberg avec une anisotropie de plan facile [21]. Il est évident qu'il y a beaucoup de possibilités pour l'étude détaillée du système de spin discret afin de comprendre les propriétés magnétiques, en particulier en incluant un terme d'amortissement de Gilbert et également le courant de spin ; voir, par exemple, une étude récente sur l'existence de tourbillons et leur inversion de polarité lors de l'application de courant de spin [22].\\
+   
+   \textbf{5. Systèmes de spin continus en (1 + 1) dimensions}\\
+   
+   Le cas continu de l'équation LLG est un système dynamique non linéaire fascinant. Il a des connexions étroites avec plusieurs systèmes de solitons intégrables en l'absence d'amortissement en (1 + 1) dimensions et possède des connexions géométriques intéressantes. Ensuite, l'amortissement peut être traité comme une perturbation. Dans le cas (2 + 1)-dimensionnel, de nouvelles structures comme les solitons de ligne, les instantons, les dromions, les motifs spatio-temporels, les tourbillons, etc. peuvent apparaître. Ils ont à la fois une signification mathématique et physique intéressante. Nous passerons brièvement en revue certaines de ces caractéristiques et indiquerons quelques-unes des tâches difficiles nécessitant une attention particulière.\\
+   
+   \textbf{(a) Système de spin isotrope de Heisenberg en (1 + 1) dimensions} \\
+   
+   En considérant le système de spin ferromagnétique de Heisenberg en (1 + 1) dimensions avec interaction de voisinage, l'équation d'évolution du spin sans amortissement peut être écrite comme suit (après mise à l'échelle appropriée)
+    \[
+   \mathbf{S}_t = \mathbf{S} \times \mathbf{S}_{xx}, \quad \mathbf{S} = (S_x, S_y, S_z) \quad \text{and} \quad S^2 = 1. \qquad \qquad \qquad \qquad \qquad (5.1)
+   \]
+   Dans l'équation (5.1) et dans ce qui suit, le suffixe signifie la différentiation par rapport à cette variable.
+   
+   Nous cartographions maintenant le système de spin [23] sur une courbe spatiale (dans l'espace des spins) définie par les équations de Serret-Frenet,
+    \[
+   e_{ix}  = D \times e_i, \quad D = \tau e_1 + k e_3, \quad e_i \cdot e_i = 1, \quad i = 1, 2, 3, \qquad \qquad \qquad \qquad (5.2)
+   \]
+   où le trièdre de vecteurs unitaires orthonormaux \(e_1\), \(e_2\), \(e_3\) sont les vecteurs tangents, normaux et binormaux, respectivement, et \(x\) est la longueur d'arc. Ici, \(k\) et \(t\) sont la courbure et la torsion de la courbe, respectivement, de sorte que \(k^2 = (e_{1x} \cdot e_{1x})\) (densité d'énergie), \(k^2 \tau = e_1 \cdot (e_{1x} \cdot e_{1x})\) est la densité de courant.
+   
+   En identifiant le vecteur de spin \(\mathbf{S}(x, t)\) de l'équation (5.1) avec le vecteur unitaire tangent \(e_1\), à partir des équations (5.1) et (5.2), on peut écrire l'évolution du trièdre comme
+   \[
+   e_{it} = \varOmega \times e_i, \quad \varOmega = (\omega_1, \omega_2, \omega_3) = \frac{k_{xx}}{k} - \tau^2, -kx, -k\tau, \qquad \qquad \qquad \qquad (5.3)
+   \]
+   Ensuite, la compatibilité \((e_i)_{xt} = (e_i)_{tx}\), \(i = 1,2,3\), conduit à l'équation d'évolution
+    \[
+   k_t = -2k_{x}\tau - k_{x}\tau \quad (5.4a) \quad \text{and} \quad \tau t = \left( \frac{k_{xx}}{k} - \tau^2\right)_x + kk_x, \quad (5.4b)
+   \]
+   qui peut être réécrite de manière équivalente [24] comme l'équation de Schrödinger non linéaire ubiquitaire (NLS),
+   \[
+   iq_t + q_{xx} + 2|q|^2q = 0, \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad  (5.5)
+   \]
+   à travers la transformation complexe
+   \[
+   q = \frac{1}{2} k \exp\left[i \int_{x}^{+\infty} \tau dx^{'} \right]. \qquad \qquad  (5.6)
+   \]
+   prouvant ainsi l'intégrabilité complète de l'équation (5.1).
+   
+   Zakharow et Takhtajan [25] ont également montré que cette équivalence entre la chaîne de spin isotrope (1 + 1)-dimensionnelle et l'équation NLS est une équivalence de jauge. Pour réaliser cela, on peut écrire la représentation de Lax du système isotrope (5.1) comme [26]
+    \[
+   \phi_{1x} = U_1(x, t, \lambda) \phi_1 \quad \text{and} \quad \phi_{1t} = V_1(x, t, \lambda)\phi_1, \qquad \qquad \qquad \qquad (5.7)
+   \]
+   où les matrices \(2 \times 2\) \(U_1 = ilS\), \(V_1 = lS S_x + 2il^2 S\), \(S = S S^z - S S^{-z}\), \(S^{\pm} = S^x \pm iS^y\). Puis, en considérant la représentation de Lax de l'équation NLS (5.6),
+   \[
+   f_{2x} = U_2 f_2 \quad \text{et} \quad f_{2t} = V_2 f_2,
+   \]
+   où \(U_2 = (A_0 + lA_1)\), \(V_2 = (B_0 + lB_1 + l^2 B_2)\),
+   \[
+   A_0 = \begin{pmatrix} -i 0 \\ q & 0 \end{pmatrix}, \quad A_1 = i s_3, \quad B_0 = \frac{1}{i} \begin{pmatrix} |qq_{x}^{2}| - |qq_{x}^{*}|^2 & 0 \\ 0 & 0 \end{pmatrix}.
+   \]
+   
+   \[ 
+   B_1 = 2A_0, \\
+   B_2 = 2A_1 \quad \text{et} \quad \sigma_i's \text{ sont les matrices de Pauli},
+   \]
+   \[ 
+   \text{on peut montrer qu'avec la transformation de jauge } f_1 = g^{-1} f_2 \quad \text{et} \quad S = g^{-1} \sigma_3 g, \quad (5.9)
+   \]
+    
+   \text{l'équation } (5.7) \text{ découle de l'équation } (5.8) \text{ et donc les systèmes } (5.1) \text{ et } (5.5) \\
+   \text{ sont équivalents en jauge.}
+   
+   
+   \text{La solution un-soliton de la composante } $S^z$ \text{ peut être écrite comme}
+   \[ 
+   S^z(x, t) = \frac{1 - 2x}{x^2 + h^2} \text{ sech}^2\left(x \left(x - 2ht - x_0\right)\right), \quad x, h, x_0 : \text{const.} \ (5.10)
+   \]
+   
+   \text{De manière similaire, les autres composantes } $S^x$ \text{ et } $S^y$ \text{ peuvent être écrites et}
+   
+   \[
+   \text{la solution N-soliton déduite.}
+   \]
+   
+   (b) \text{Chaîne isotrope avec amortissement de Gilbert}
+   
+   \text{L'équation LLG pour le cas isotrope est}
+   \[
+   S_t = S \times S_{xx} + l[S_{xx} - (S \cdot S_{xx})S]. \ (5.11)
+   \]
+   \text{Le vecteur de spin unitaire } S(x, t) 
+   \text{ peut être à nouveau mappé sur le vecteur} $e_1$ 
+   \text{ unitaire tangent  de la courbe d'espace, et en procédant comme précédemment } [27], 
+   \text{ on peut obtenir l'équation équivalente amortie NLS,}
+   \[
+   iq_t + q_{xx} + 2|q|^2q = il \int_{-\infty}^{x} (qq_{x}^{*} - q^{*}q_{x}) dx, \ (5.12)
+   \]
+   \text{où encore une fois } q \text{ est défini par l'équation } (5.5) \text{ avec courbure et torsion définies} \\
+   \text{comme précédemment. Traitant les termes d'amortissement proportionnels à } l \text{ comme une perturbation, on peut} \\
+   \text{analyser l'effet de l'amortissement sur la structure solitonique.}
+   
+   (c) \text{Système de spin de Heisenberg inhomogène}
+   
+   \text{En considérant le système de spin inhomogène, correspondant à l'espace}
+   
+   \[
+   S_t = (g^2 + m^2x)S \times S_{xx} + m^2S \times S_x - (g^1 + m^1x)S_x, \ (5.13)
+   \]
+   \text{où} \ $g^1$, $g^2$, $m^1$ \ \text{et} \ $m^2$ \ \text{sont des constantes, encore une fois en utilisant le }\\ \text{formalisme de la courbe d'espace,} \text{Lakshmanan et Bullough} [28] \ \text{ont montré}\\ \text{l'équivalence géométrique/de jauge de} \text{l'équation} \ (5.13) \ \text{avec l'équation non locale} \\ x \ \text{NLS linéairement dépendante,}
+   \[
+   iq_t = im^1q + i(g^1 + m^1x)q_x + (g^2 + m^2x)(q_{xx} + 2|q|^2q) + 2m^2 \int_{-\infty}^{x} q_x + q dx = 0. \ (5.14)
+   \]
+   \text{Il a également été démontré dans} \ \text{Lakshmanan et Bullough} [28] \ \text{que les deux systèmes} \ (5.13) \ \text{et} \ (5.14) \\
+   \text{sont complètement intégrables et les valeurs propres des problèmes}\\
+   \text{linéaires associés sont dépendantes du temps.}
+   
+   (d) \ \text{Système de spin sphériquement symétrique (radial) en n dimensions}
+   
+   \text{Le système de spin de Heisenberg sphériquement symétrique en n dimensions} [29]
+   \[
+   S_t(r, t) = S \times S_{rr} + (n - 1)rSr \quad \text{et} \quad S^2(r, t) = 1,  \quad S = (S_x, S_y, S_z), \\
+   \]
+   \[
+   r^2 = r_1^2 + r_2^2 + \ldots + r_n^2, \quad 0 \leq r < \infty
+   \]
+   
+   \[
+   \text{(5.15)}
+   \]
+   \text{peut également être mappé sur la courbe d'espace et être montré} \\
+   \text{être équivalent à l'équation NLS radiale généralisée,}
+   
+   \[
+   iq_t + q_{rr} + \frac{n - 1}{r}q_r = \int_{0}^{r} n r^{-2} - 2|q|^2 - 4(n - 1) \int_{0}^{r} \frac{1}{r}|qr|^2 dr \ q.
+   \]
+   \[
+   \text{(5.16)}
+   \]
+   \text{Il a été démontré que seuls les cas} \ n = 1 \ \text{et} \ n = 2 \ \text{sont des systèmes solitons complètement} \\
+   \text{intégrables} [30,31] \ \text{avec des paires de Lax associées.}
+   
+   (e) \ \text{Systèmes de spin anisotropes de Heisenberg}
+   
+   \text{Ce n'est pas seulement le système de spin isotrope qui est intégrable, même certains} \\
+   \text{cas anisotropes sont intégrables. Particulièrement, la chaîne anisotrope uniaxiale}
+   
+   \[
+   S_t = S \times [S_{xx} + 2A S_{znz} + \mathbf{H}], \quad \mathbf{nz} = (0, 0, 1)
+   \]
+   \[
+   \text{(5.17)}
+   \]
+   \text{est équivalente en jauge à l'équation NLS} [32] \ \text{dans le cas du champ longitudinal} \ $\mathbf{H} = (0, 0, H_z)$ \ \text{et est complètement intégrable. De même, le système bi-anisotrope}
+   \[
+   S_t = S \times JS_{xx}, \quad J = \text{diag}(J_1, J_2, J_3), \quad J_1 = J_2 = J_3
+   \]
+   \[
+   \text{(5.18)}
+   \]
+   \text{possède une paire de Lax et est intégrable} [33]. \ \text{D'autre part, la chaîne anisotrope} \\
+   \text{avec un champ magnétique transversal}, \ $\mathbf{H} = (H_x, 0, 0)$, \ \text{est} \\
+   \text{non intégrable et peut présenter des structures chaotiques spatio-temporelles} [34].
+   
+   \[
+   S_t = S \times S_{xx} + g \left[ S_{xxxx} - \frac{5}{2}(S \cdot S_{xx})S_{xx} - \frac{5}{3}(S \cdot S_{xxx})S_x \right]
+   \]
+   \[
+   \text{(5.19)}
+   \]
+   \text{est un système soliton intégrable} [35] \ 
+   \text{et est équivalent à une équation NLS généralisée}
+   \text{ du quatrième ordre,}
+   
+   \[
+   iq_t + q_{xx} + 2|q|^2 + g[q_{xxxx} + 8|q|^2q_{xx} + 2q^2q_{xx}^* + 4q|q_x|^2 + 6q^*q_{xx} + 6|q|^4q] = 0.
+   \]
+   \[
+   \text{(5.20)}
+   \]
+   \text{De même, l'équation de spin déformée invariante} \ SO(3) \ \text{,}
+   \[
+   S_t = S \times S_{xx} + aS_x(S_x)^2
+   \]
+   \[
+   \text{(5.21)}
+   \]
+   \text{est géométriquement et en jauge équivalente à une équation NLS dérivée} [36],
+   \[
+   iq_t + q_{xx} + \frac{1}{2}|q|^2q - ia(|q|^2q)_x = 0.
+   \]
+   \[
+   \text{(5.22)}
+   \]
+   
+   Il existe également plusieurs études qui mappent l'équation LLG dans différents limites
+   à l'équation de sine-Gordon (système plan), Korteweg–de Vries, Korteweg–de Vries modifiée et autres équations, selon la nature des
+   interactions. Pour plus de détails, voir, par exemple, [37,38].
+   
+   6. Systèmes de spin continus en dimensions supérieures
+   
+   L'équation LLG dans des dimensions spatiales plus élevées, bien que physiquement la plus
+   importante, est mathématiquement très difficile. Contrairement au cas (1 + 1) dimensionnel
+   même en l'absence d'amortissement, très peu de résultats exacts sont disponibles
+   en (2 + 1) ou (3 + 1) dimensions. Nous soulignons brièvement les progrès
+   et les défis.
+   
+   (a) Non-intégrabilité des systèmes de spin isotropes de Heisenberg
+   
+   Le système de spin isotrope en (2 + 1) dimensions
+   \[
+   S_t = S \times (S_{xx} + S_{yy}), \quad S = (S_x, S_y, S_z) \quad \text{et} \quad S^2 = 1, \quad (6.1)
+   \]
+   sous projection stéréographique, voir équation (3.7), devient [39]
+   \[
+   (1 + uu^*)[iut + u_{xx} + u_{yy}] - 2u^*(u_{x}^2 + u_{y}^2) = 0. \quad (6.2)
+   \]
+   Il a été démontré [40] qu'il est de nature non-Painlevé. Les solutions admettent
+   des variétés singulières de type logarithmique et donc le système (6.1) est non-intégrable.
+   Il peut admettre des types spéciaux de solutions d'ondes de spin, de solitons planaires, de solutions axisymétriques, etc. [39]. De manière intéressante, le cas statique
+   \[
+   u_{xx} + u_{yy} = \frac{2u^*}{(1 + uu^*)^2} (u_{x}^2 + u_{y}^2) \quad (6.3)
+   \]
+   admet des solutions d'instanton de la forme
+   \[
+   u = (x_{1} + ix_{2})^{m}, \quad S_z = \frac{1 - (x_{1}^2 + x_{2}^2)^{m}}{1 + (x_{1}^2 + x_{2}^2)^{m}}, \quad m = 0, 1, 2, \ldots \quad (6.4)
+   \]
+   avec une énergie finie [27,41]. Enfin, très peu d'informations sont disponibles à ce jour sur
+   les systèmes de spin isotropes en (3 + 1) dimensions [42].
+   
+   (b) Modèles de spin (2 + 1) dimensionnelles intégrables
+   
+   Bien que l'équation LLG même dans le cas isotrope soit non-intégrable dans des dimensions supérieures
+   il existe quelques modèles de spin intégrables de l'équation LLG généralisée sans amortissement en (2 + 1) dimensions. Cela inclut l'équation d'Ishimori
+   [43] et l'équation de Myrzakulov [44], où l'interaction avec un
+   champ scalaire supplémentaire est incluse.
+   
+   (i) Équation d'Ishimori
+   
+   L'équation d'Ishimori peut être écrite comme
+   \[
+   S_t = S \times (S_{xx} + S_{yy}) + u_x S_y + u_y S_x \quad (6.5a)
+   \]
+   et
+   \[
+   u_{xx} - s^2 u_{yy} = -2s^2 S \cdot (S_x \times S_y), \quad s^2 = \pm 1. \quad (6.5b)
+   \]
+   L'équation (6.5) admet une paire de Lax et est résoluble par la transformation de scattering inverse
+   méthode (d-bar) [45]. Il est géométriquement et en jauge équivalent à
+   l'équation de Davey–Stewartson et admet des solutions de dromion exponentiellement localisées
+   en plus des solitons de ligne et des solutions de soliton en forme de bosse décroissantes
+   algébriquement. Il est intéressant de noter que ici on peut mapper le spin sur une surface en mouvement au lieu d'une courbe en mouvement [44].
+   
+   (ii) Équation de Myrzakulov I [44]
+   
+   L'équation de spin modifiée
+   \[
+   S_t = (S \times S_y + uS)_x \quad \text{et} \quad u_x = -S \cdot (S_x \times S_y) \quad (6.6)
+   \]
+   peut être montrée être géométriquement et en jauge équivalente à l'équation de Calogero–
+   Zakharov–Strachan
+   \[
+   iq_t = q_{xy} + Vq \quad \text{et} \quad V_x = 2(|q|^2)_y \quad (6.7)
+   \]
+   et est intégrable. Il admet à nouveau des solitons de ligne, des dromions et des bosses.
+   Cependant, d'un point de vue physique, il serait extrêmement précieux si exact
+   les structures analytiques de l'équation LLG en dimensions spatiales supérieures sont obtenues
+   et le soi-disant problème de collapse d'onde [46] est étudié en détail.
+   
+   (c) Instabilités des ondes de spin et motifs spatio-temporels
+   
+   Comme indiqué au début, la dynamique non linéaire sous-jacente à l'
+   évolution des nanoferromagnétismes à l'échelle nanométrique est essentiellement décrite par l'équation LLG.
+   En considérant un film ferromagnétique bidimensionnel avec anisotropie uniaxiale dans la présence de pompage perpendiculaire, l'équation LLG peut être
+   écrit sous la forme
+   \[
+   S_t = S \times F_{\text{eff}} - lS \times \frac{vS}{vt}, \quad (6.8a)
+   \]
+   où
+   \[
+   F_{\text{eff}} = JV^2 S + B_a + kS e + H m \quad (6.8b)
+   \]
+   et
+   \[
+   B_a = ha_{\perp} (\cos ut \mathbf{i} + \sin ut \mathbf{j}) + ha_e. \quad (6.8c)
+   \]
+   
+   Ici, \(i\), \(j\) sont des vecteurs orthonormaux unitaires dans le plan transverse à l'anisotropie
+   axe dans la direction \(e = (0, 0, 1)\), \(k\) le paramètre d'anisotropie, \(J\) le paramètre d'échange
+   et \(H_m\) le champ démagnétisant. En réécrivant en coordonnées stéréographiques
+   les équations, l'équation (6.8) peut être réécrite [47] comme
+   \begin{align*}
+   &i(1 - il)u_t = J \nabla^2 u - \left(\frac{1}{2}u + u^*(\nabla u u^*)^2\right) - ha - n + ian + k\left(\frac{1}{2}(1 - |u|^2)\right)u \\
+   &\quad + \frac{1}{2}ha_{\perp}(1 - |u|^2) - ha u + \frac{1}{2}(H_m e^{-int} - n^2 H_m^* e^{int})u. \quad (6.9)
+   \end{align*}
+   
+   Ensuite, quatre points fixes physiquement importants explicites (équatoriaux et associés)
+   du vecteur de spin dans le plan transverse à l'axe d'anisotropie lorsque
+   la fréquence de pompage \(n\) coïncide avec l'amplitude du champ parallèle statique peut être identifiée. En analysant la stabilité linéaire de ces nouveaux points fixes
+   sous perturbations d'ondes de spin homogènes, on peut obtenir un généralisé Suhl
+   critère d'instabilité, donnant la condition de croissance exponentielle des modes P (fixe
+   points) sous perturbations d'ondes de spin. On peut également étudier le début de différents
+   motifs magnétiques spatio-temporels de là. Ces résultats diffèrent qualitativement
+   de la résonance ferromagnétique conventionnelle près de l'équilibre thermique et sont
+   susceptibles de tests expérimentaux. Il est clair qu'il reste beaucoup de travail à faire
+   le long de ces lignes.
+   
+   \section{Conclusions}
+   
+   Dans cet article, tout en essayant de fournir une vue d'ensemble du monde plutôt vaste
+   de l'équation LLG, l'objectif principal était de donner un aperçu de pourquoi
+   il est fascinant tant du point de vue physique que mathématique. Il
+   devrait être clair que les défis sont nombreux et il sera très gratifiant
+   de les poursuivre. Ce qui est connu à l'heure actuelle sur différents aspects de la LLG
+   l'équation est à peine minimal, que ce soit le cas d'un seul spin, ou la discrète
+   cas de réseau ou les cas de limite continue même dans une dimension spatiale, tandis que
+   peu de progrès ont été réalisés dans des dimensions spatiales plus élevées. Mais même dans ceux
+   cas spéciaux où des solutions exactes ou approximatives sont connues, l'équation LLG
+   présente une très grande variété de structures non linéaires : points fixes, ondes de spin,
+   ondes solitaires, solitons, dromions, tourbillons, bifurcations, chaos, instabilités,
+   motifs spatio-temporels, etc. Les applications sont nombreuses, à commencer par les propriétés magnétiques standard, y compris l'hystérésis, les résonances et les facteurs de structure jusqu'à
+   les applications dans les nanoferromagnétismes, les films magnétiques et la spintronique. Mais à chaque
+   étape, la compréhension est assez incomplète, que ce soit les bifurcations et les routes
+   vers le chaos dans l'équation discrète ou les motifs spatio-temporels dans le continuum
+   équation. En ce sens, même après plus de 50 ans depuis sa découverte, LLG
+   l'équation reste l'une des équations les plus riches en ce qui concerne la physique non linéaire.
+   
+   
+	
+\end{document}

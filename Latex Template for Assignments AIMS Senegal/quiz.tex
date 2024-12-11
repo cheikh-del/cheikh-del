@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\title{Phase Portrait Analysis}
+\author{Cheikh Omar BA}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Phase Portrait Analysis}
+	
+	To determine the nature of the phase portrait for \( x, y \geq 0 \), we first find the x- and y-nullclines by setting \( \frac{dx}{dt} = 0 \) and \( \frac{dy}{dt} = 0 \), respectively.
+	
+	\subsection*{X-Nullclines}
+	\begin{itemize}
+		\item For the x-nullcline:
+		\[ x' = x(2 - y - 2x) = 0 \]
+		Setting \( x' \) equal to zero gives us two possibilities:
+		\begin{enumerate}
+			\item \( x = 0 \)
+			\item \( 2 - y - 2x = 0 \)
+		\end{enumerate}
+	\end{itemize}
+	
+	\subsection*{Y-Nullclines}
+	\begin{itemize}
+		\item For the y-nullcline:
+		\[ y' = y(3 - y - 4x) = 0 \]
+		Setting \( y' \) equal to zero gives us two possibilities:
+		\begin{enumerate}
+			\item \( y = 0 \)
+			\item \( 3 - y - 4x = 0 \)
+		\end{enumerate}
+	\end{itemize}
+	
+	\subsection*{Phase Portrait Analysis}
+	\[
+	\begin{array}{|c|c|}
+	\hline
+	\text{Region} & \text{Phase Portrait} \\
+	\hline
+	1 & \text{Both } x \text{ and } y \text{ are increasing} \\
+	2 & \text{Only } x \text{ is decreasing, } y \text{ is increasing} \\
+	3 & \text{Both } x \text{ and } y \text{ are decreasing} \\
+	4 & \text{Only } y \text{ is decreasing, } x \text{ is increasing} \\
+	\hline
+	\end{array}
+	\]
+	
+	By analyzing the signs of \( x' \) and \( y' \) in each region, we can sketch the phase portrait.
+	
+\end{document}

@@ -1,0 +1,317 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,systeme}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow,multicol}
+\usepackage{pifont,hyperref,lastpage,fancyhdr,movie15,float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% Footer and Header %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}                                                     %%%
+\fancyhf{} 		                                                      %%%
+\lfoot{\tiny\textsf{\includegraphics[width=1.8cm]{AIMSSenegalLogo}    %%%
+Po.Box~1418 Mbour-Thies,~phone~{(+221) 33 956 7693},~                 %%%
+\url{http://www.aims-senegal.org}}}                                   %%%
+\rfoot{\bfseries Page \thepage~of \pageref{LastPage}}                 %%%
+\renewcommand{\footrulewidth}{1.pt}\renewcommand{\headrulewidth}{0pt} %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Fill here information about the present assignment %%%%%%%%%%%%%%
+\newcommand{\code}{[Your Code]}                                       %%%
+\newcommand{\deadline}{[Date, Time]}                                  %%%
+\newcommand{\assignment}{assignment [x] ON [Course Name]}			  %%% 
+\newcommand{\lecturer}{Lecturer: [Lecturer Name]}                     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%  Title at the first page  %%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace*{-4cm}\begin{minipage}{\textwidth}                     %%%
+\begin{center}                                                        %%%
+\begin{tabular}{|c|c|c|}                                              %%%
+\hline\multicolumn{3}{|c|}{\bf\scriptsize\MakeUppercase\assignment}\\ %%%
+\hline{\small Student's Code}&                                        %%%
+\multirow{3}{7cm}{\includegraphics[width=7.5cm,height=2.3cm]{AIMSSenegalLogo}} %%%
+& {\small Deadline}\\                                                 %%%
+\cline{1-1}\cline{3-3}{\small\bf\code}&&{\small\bf\deadline} \\       %%%
+\cline{1-1}\cline{3-3}{\small\today} &&{\small2019-2020}\\            %%%
+\hline\multicolumn{3}{|r|}{\scriptsize\lecturer}\\\hline              %%%
+\end{tabular}                                                         %%%
+\end{center}                                                          %%%
+\end{minipage}\hfill\date{}\vspace*{-1cm}}                            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newtheorem{theo}{Theorem}
+\newtheorem{defi}{Definition}
+\newenvironment{proof}[1][Proof.]{\textbf{#1~}}{\ \rule{0.5em}{0.5em}}
+
+\begin{document}
+\maketitle\thispagestyle{fancy}
+
+\section{Solution of Exercise 1}
+Solve the following systems of equations \\
+1.
+  	
+	\begin{gather*}
+    \systeme{x + 2y + 3z= 10@\qquad(*), 2x + y - z = 3,-x + 3y + 2z = 5 }
+	\end{gather*}
+	
+	
+ If we fixe (1) and try to annul x in (2) and (3). We multiply the equation (1) by -2, and we will have:
+	 \begin{gather*}
+	 \systeme{-2(x + 2y + 3z= 10)@\qquad(4), 2x + y - z = 3@\qquad(5) }
+	 \end{gather*}
+	 $\Longrightarrow$\begin{gather*}
+	 \systeme{-2x -4y - 6z= -20)@\qquad(4), 2x + y - z = 3@\qquad(5) }
+	 \end{gather*}
+	 Hence, after sum of equation (4) and (5), the result will be:
+	 
+	We will have: 
+	\[
+	\left\{
+	\begin{array}{r c l}
+	x + 2y + 3z &= 10 \\
+	-3y - 7z &= -17\\
+	5y + 5z &= 15
+	\end{array}
+	\right.
+	\]
+	Secondly, we note the new second equation (4) and the last (5). If we multiply (4) by 5 and (5) by 3, we will have. 
+	\[
+	\left\{
+	\begin{array}{r c l}
+	-15y - 35z &= -85\\
+	15y + 15z &= 45
+	\end{array}
+	\right.
+	\]
+	Then, It will give us z = 2, and if we replace the value of z in (4), hence y = 1. To have the value of x, we can replace in (1). The result is x = 2. The solution is given by:
+	S = $\{(2, 1, 2)\}$ \\
+2. 
+	\[
+	\left\{
+	\begin{array}{r c l}
+	3x - 4y + 5z &= 1 \\
+	7x - 2y - 4z  &= 3  \\
+	-x - 6y + 14z &= 8 
+	\end{array}
+	\right.
+	\]	
+
+Firstly, we rename the first equation (1), the second (2) and the third (3). If we fixe (1) and try to annule x in (2) and (3). We will have: 
+
+	 \[
+	\left\{
+	\begin{array}{r c l}
+	3x - 4y + 5z &= 1\\
+	-22y + 47z &= -2\\
+	-22y + 42z &= 25
+	\end{array}
+	\right.
+	\]
+
+   
+   
+   	\begin{gather*}  	
+   	\systeme{3x+y+2z=6@\qquad(*), x+3y+2z=-6, x+y+z=1}    % separation by '\qquad'
+   	\end{gather*}
+   
+
+
+
+
+
+\section{Solution of exercice }
+Let 
+\[
+A = 
+\begin{bmatrix}
+2 & 0 & 0 \\
+1 & 3 & -1  \\
+2 & 2 & 0
+\end{bmatrix}
+\]
+
+\begin{enumerate}
+	\item[1)] Verify that the matrix $A$ is invertible and compute its inverse $A^{-1}$.
+	
+	We have to determine the determinant of A 
+	\[
+	det(A)= \begin{vmatrix}
+	2 & 0 & 0 \\
+	1 & 3 & -1  \\
+	2 & 2 & 0 
+	\end{vmatrix} 
+	\]
+	\qquad 
+	\[
+	= 2\begin{vmatrix}
+	3 & -3  \\
+	2 & 0 
+	\end{vmatrix} 		
+	\] 
+	\begin{center}
+		$ = 2\times (2) = 4 \neq 0$
+	\end{center}
+	
+	Therefore A is \textbf{inversible}. 
+\end{enumerate}	
+Now we want to find the inverse of the matrix A.
+\\We denote $ A^{c}=(c_{ij})_{1\leq i,j\leq 2} $ the matrix of cofactors of A.
+We determine the coefficients of $  A^{c} $:\\
+$A^{-1} = \frac{1}{det(A)}\times[cofactorsA]^t$
+
+\[
+[cofactors A] =
+\begin{bmatrix}
+2 & 2 & -4  \\
+0 & 0 & 4   \\
+0 & -2 & 6
+\end{bmatrix}
+\]
+
+\[
+[cofactors A]^{t} =
+\begin{bmatrix}
+2 & 0 & 0  \\
+2 & 0 & -2   \\
+-4 & 4 & 6
+\end{bmatrix}
+\]
+So $A^{-1}$ is equal to:
+
+\[
+A^{-1} = \frac{1}{4}\times 
+\begin{bmatrix}
+2 & 0 & 0  \\
+2 & 0 & -2   \\
+-4 & 4 & 6
+\end{bmatrix}	    
+\]
+
+\[
+A^{-1} = \begin{bmatrix}
+\frac{1}{2} & 0 & 0 \\
+\frac{1}{2} & 0 & -2 \\
+-1 & 1 & \frac{3}{2} 
+\end{bmatrix} 
+\]
+\begin{enumerate}
+	\item[2)]  Compute its characteristic polynomial $P_A(x)$.
+\end{enumerate}
+We have:
+\[
+P_{A}(X) = det
+\begin{pmatrix}
+2-X & 0 & 0\\
+1 & 3-X & -1\\
+2 & 2 & -X
+\end{pmatrix} 
+\]
+\[=
+-X
+\begin{bmatrix}
+2-X & 0 \\
+1 & 3-X 
+\end{bmatrix} + 1
+\begin{bmatrix}
+2-X & 0 \\
+2 & 2 
+\end{bmatrix} 
+\]
+\begin{center}
+	$= -X(2-X)(3-X) + 2(2-X) $
+	$= (2-X)(-X(3-X)+2) \quad$
+	$ = (2-X)(-3X + X^2 + 2) \quad$   
+	
+	
+	$ \Rightarrow \quad P_{A}(X) = (2-X)(X-1)(3X+2)$
+\end{center}
+
+The eigenvalues of A are $\lambda_{1} = 2, \quad \lambda_{2} = 1 \quad and \quad \lambda_{3} = -\frac{2}{3}$
+\begin{enumerate}
+	\item[3)] Compute the sets of all eigenvalues and eigenvectors.
+	
+	The set of eigenvalues is: $Spect_{A} = \{2,1,3\}$. \\
+	To find the eigenvectors, we must each eigenvalue and try to find his eigenvectors associated.\\ This is given by: 
+	
+	If $\lambda_{1} = 2$ $\implies$ $E_{\lambda_{1}} = E_2 = Ker(A-2.I)$ 
+	
+	Let $x_1, x_2, x_3$ are $\in E_{2}$. Then one has:
+	\[
+	\left(A-I\right).\begin{pmatrix}
+	x_{1}\\
+	x_{2}\\
+	x_{3}
+	\end{pmatrix}
+	= \begin{pmatrix}
+	0\\
+	0\\
+	0
+	\end{pmatrix}
+	\] \quad $ \Rightarrow$\[
+	\begin{pmatrix}
+	0 & 0 & 0\\
+	1 & 1 & -1\\
+	2 & 2 & -2
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_{1}\\
+	x_{2}\\
+	x_{3}
+	\end{pmatrix}
+	= \begin{pmatrix}
+	0\\
+	0\\
+	0
+	\end{pmatrix}
+	\]
+	\[
+	\left\{
+	\begin{array}{r c l}
+	0 &= 0 \\
+	x_1 + x_2 - x_3 &= 0 \\
+	2x_1 + 2x_2 - 2x_3 &= 0
+	\end{array}
+	\right.
+	\]
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%{\footnotesize
+%\begin{thebibliography}{99}
+%\bibitem{wik} Wikipedia, \emph{Fundamental theorem of calculus},\\  \href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus}{https://en.wikipedia.org/wiki/Fundamental\_theorem\_of\_calculus}
+%\bibitem{fancy}For page style, \href{http://www.emerson.emory.edu/services/latex/latex_129.html}{http://www.emerson.emory.edu/services/latex/latex\_129.html}
+%\bibitem{header} Headers and footers, \href{https://www.overleaf.com/learn/latex/Headers_and_footers}{https://www.overleaf.com/learn/latex/Headers\_and\_footers}
+%\end{thebibliography}
+%}
+
+%%\nocite{*}
+%\bibliographystyle{amsalpha}
+%%\bibliographystyle{ieeetr-alpha-fr}
+%%\bibliographystyle{spr-mp-nameyear-cnd}
+%{\footnotesize\bibliography{biblio}}
+
+\end{document}

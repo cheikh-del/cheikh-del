@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper]{book}
+
+\usepackage{geometry}
+\geometry{a4paper,textheight=26cm,textwidth=19cm,hcentering,top=1cm,footnotesep=.5cm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+
+\usepackage{listings}
+
+\lstdefinestyle{stylepython}{
+        language=Python, 
+        basicstyle=\ttfamily,
+%       name=iciNOM,
+        title={Un programme Python}, 
+%       caption={iciTitre},
+%       label={iciNom},
+        commentstyle=\footnotesize\color{green!50!black}, 
+        keywordstyle=\color{blue},   
+        stringstyle=\color{olive},   
+        numberstyle=\tiny,  
+%       mathescape,  
+%       showstringspaces=false,   
+%       tabsize=2,   
+        framexleftmargin=5mm,  
+%       framexrightmargin=5pt,
+%       framexbottommargin=5pt
+        xleftmargin=0mm,  
+        keepspaces=false,   
+        classoffset=1,     
+        numbers=left,    
+        stepnumber=1,    
+        numbersep=8pt,   
+        showstringspaces=false,  
+        frame=single,
+        framerule=1pt,
+        rulecolor=\color{yellow}, 
+%       breaklines=true,  
+%       rulesepcolor=\color{blue}, %avec frame=shadowsbox
+        backgroundcolor=\color{yellow!30}
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{minipage}{8cm} %--------------------------------------
+
+\begin{lstlisting}[style=stylepython]
+#Ceci est un commentaire.
+n=int(input("n = ?"))
+if n<10:
+   t=0.9*n
+elif n<20:
+   t=0.7*n
+else:
+   t=0.6*n
+print(t)
+
+\end{lstlisting}
+
+\end{minipage} %--------------------------------------------
+
+\end{document}

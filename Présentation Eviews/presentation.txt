@@ -1,0 +1,32 @@
+Modèle
+On veut prédire si le vin est de bonne qualité
+qualité= 0:Mauvaise 1:Bonne qualité
+
+qualit=0*(0<quality<5)+1*(quality>=5)
+
+qualit c chlorides density ph residual_sugar volatile_acidity alcohol citric_acid fixed_acidity free_sulfur_dioxide total_sulfur_dioxide
+
+Beta_X=-169.9615+178.7780*@mean(DENSITY)-2.001425*@mean(PH)-0.156835*@mean(RESIDUAL_SUGAR)-2.306766*@mean(VOLATILE_ACIDITY)+0.327913*@mean(ALCOHOL)-0.211786*@mean(FIXED_ACIDITY)+0.008085*@mean(TOTAL_SULFUR_DIOXIDE)
+
+f_densite=@dnorm(Beta_X)
+F_repartition=@cnorm(Beta_x)
+moyen_density=@mean(density)
+Em_density=178.7780*f_densite
+
+Logistique:
+Beta_X_Logi=-377.021204504 + 396.875880129*@mean(DENSITY) - 4.80139717108*@mean(PH) - 0.326739121629*@mean(RESIDUAL_SUGAR) - 4.69435310343*@mean(VOLATILE_ACIDITY) + 0.739988704816*@mean(ALCOHOL) - 0.492450985273*@mean(FIXED_ACIDITY) + 0.0188202555786*@mean(TOTAL_SULFUR_DIOXIDE)
+f_densitLog=@DLOGISTIC(Beta_X_Logi)
+F_repartition=@CLOGISTIC(Beta_X_Logi)
+
+Em_logi=396.875880129*f_densitLog
+e_logi=(Em_logi*@mean(density))/F_repartition
+
+
+
+
+
+
+
+
+
+

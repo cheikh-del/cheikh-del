@@ -1,0 +1,287 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow,multicol}
+\usepackage{pifont,hyperref,lastpage,fancyhdr,movie15,float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% Footer and Header %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}                                                     %%%
+\fancyhf{} 		                                                      %%%
+\lfoot{\tiny\textsf{\includegraphics[width=1.8cm]{AIMSSenegalLogo}    %%%
+Po.Box~1418 Mbour-Thies,~phone~{(+221) 33 956 7693},~                 %%%
+\url{http://www.aims-senegal.org}}}                                   %%%
+\rfoot{\bfseries Page \thepage~of \pageref{LastPage}}                 %%%
+\renewcommand{\footrulewidth}{1.pt}\renewcommand{\headrulewidth}{0pt} %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Fill here information about the present assignment %%%%%%%%%%%%%%
+\newcommand{\code}{[Your Code]}                                       %%%
+\newcommand{\deadline}{[Date, Time]}                                  %%%
+\newcommand{\assignment}{assignment [x] ON [Course Name]}			  %%% 
+\newcommand{\lecturer}{Lecturer: [CheikhOmar BA]}                     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%  Title at the first page  %%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace*{-4cm}\begin{minipage}{\textwidth}                     %%%
+\begin{center}                                                        %%%
+\begin{tabular}{|c|c|c|}                                              %%%
+\hline\multicolumn{3}{|c|}{\bf\scriptsize\MakeUppercase\assignment}\\ %%%
+\hline{\small Student's Code}&                                        %%%
+\multirow{3}{7cm}{\includegraphics[width=7.5cm,height=2.3cm]{AIMSSenegalLogo}} %%%
+& {\small Deadline}\\                                                 %%%
+\cline{1-1}\cline{3-3}{\small\bf\code}&&{\small\bf\deadline} \\       %%%
+\cline{1-1}\cline{3-3}{\small\today} &&{\small2019-2020}\\            %%%
+\hline\multicolumn{3}{|r|}{\scriptsize\lecturer}\\\hline              %%%
+\end{tabular}                                                         %%%
+\end{center}                                                          %%%
+\end{minipage}\hfill\date{}\vspace*{-1cm}}                            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newtheorem{theo}{Theorem}
+\newtheorem{defi}{Definition}
+\newenvironment{proof}[1][Proof.]{\textbf{#1~}}{\ \rule{0.5em}{0.5em}}
+
+\begin{document}
+\maketitle\thispagestyle{fancy}
+
+\section{Solution of Exercise 1}
+Let V and W be two vectors spaces over a field K and $T : V \longrightarrow W$ be a linear
+map. Show that:
+\begin{enumerate}
+	\item [a)] $T(\sum_{i=1}^{n}a_ix_i) = \sum_{i=1}^{n}a_iT(x_i) $ where $a_i \in K, \forall i = 1,2,.....,n (x_1,....,x_n) \in V,$ 
+	To show this, let's use the linearity property of the linear transformation T. A linear transformation T satisfies two properties: additivity and homogeneity.
+	\begin{enumerate}
+		\item [1.]\textbf{Additivity:} $T(u + v) = T(u) + T(v)$ for all vectors u,v in the domain V.
+		\item [2.]\textbf{Homogeneity:} $T(cu) = cT(u)$ for all vectors u in the domain V and all scalars c in the field K.
+	\end{enumerate}
+Now, let's prove the given statement: 
+Given: $(a_1,...,a_n) \in K$ and $(a_1,...,a_n) \in V$, we want to show that: 
+$T(\sum_{i=1}^{n}a_ix_i) = \sum_{i=1}^{n}a_iT(x_i)$ 
+We can use induction to prove this statement. The base case is n = 1, where the statement is trivially true.\\
+\textbf{Base case (n=1):} 
+$T(a_1x_1) = a_1T(x_1)$
+This holds true by linearity property of T.\\
+\textbf{Inductive Step :}
+Assume that the statement holds for n=k, i.e.,\\
+$T(\sum_{i=1}^{n}a_ix_i) = \sum_{i=1}^{n}a_iT(x_i) $\\
+
+Now, consider $n = k + 1$:
+$(\sum_{i=1}^{k+1}a_ix_i) = T(\sum_{i=1}^{k+1}a_ix_i + a_{k+1}x_{k+1})$ \\
+
+By the additivity property of $T$, this is equal to:
+
+$T(\sum_{i=1} ^{k}a_ix_i) + T(a_{k+1}x_{k+1})$
+
+Now, apply the inductive assumption:
+$\sum_{i=1}^{k}a_iT(x_i) + T(a_{k+1}x_{k+1})$
+Now, by the homogeneity property, $T(a_{k+1}x_{k+1}) = a_{k+1}T(x_{k+1})$:
+
+$\sum_{i=1}^{k}a_iT(x_i) + a_{k+1}T(x_{k+1})$
+
+
+	\item [b)] if $(v_1,...., v_n) \in V$ is a dependent family of vectors then $(T(v_1),...,T(v_n)) $ is also dependent,
+	if $(v_1,...., v_n) \in V$ is a dependent family of vectors then, here exist scalars $c_1,...,c_n$, not all zero, such that:
+	
+	$c_1v_1+c_2v_2+....+c_nv_n = 0$
+	Now, let's apply the linear transformation T to both sides of this equation:
+	
+	$T(c_1v_1+c_2v_2+....+c_nv_n) = T(0)$
+	
+	Using the linearity property of T, we get:
+	
+	$c_1T(v_1)+c_2T(v_2)+...+c_nT(v_n) = 0$
+	
+	This shows that $(T(v_1),....,T(v_n)).$ 
+	
+	So, the dependence of the original family of vectors is preserved under the linear transformation T.
+	\item [c)] if, moreover, T is one to one and $(v_1, . . . , v_n) \in V$ is an independent family of vectors
+then $(T(v_1),....,T(v_n))$  is also independent,
+	
+	Let's prove this:
+	Suppose $(v_1,....,v_n)$ is an independent family of vectors in V. This means that the equation
+	
+	$c_1v_1+c_2v_2+....+c_nv_n = 0$
+	implies that all the coefficients $c_1,c_2,....,c_n$ are zero.
+	
+	Now, consider the image of this equation under the linear transformation T:
+	
+	$T(c_1v_1+c_2v_2+....+c_nv_n) = T(0)$
+	
+	Using the linearity property of T, this becomes:
+	
+	$c_1T(v_1)+c_2T(v_2)+...+c_nT(v_n) = 0$
+		
+	Since T is injective, the only way the linear combination $c_1T(v_1)+c_2T(v_2)+...+c_nT(v_n)$ can equal zero is if all the coefficients $c_1,c_2,....,c_n$ are zero. This follows from the injectivity of T. 
+	
+	Therefore, $(T(v_1),...,T(v_n)$ is an independent family of vectors in the range of T.
+	\item[d)] if, moreover, T is onto and $S \subset V$ is a spanning set for V then $T(S)$ is spanning set for W.
+	
+	Let's prove this:
+	\begin{enumerate}
+		\item[1.] $S \subset V$ \textbf{ is a spanning set for V:} 
+	This means that every vector $v \in V$ can be expressed as a linear combination of vectors in S. Mathematically, for any $v \in V$,  there exist scalars $c_1,c_2,....,c_n$ 
+	and vectors $s_1,s_2,....,s_n \in S$ such that: 
+	
+	$v = c_1s_1 + c_2s_2 + .... + c_ns_n$
+	    \item[2.] T \textbf{ is onto (surjective):}
+	    
+	 This means that every vector in the codomain W is the image of at least one vector in V under
+	 T.
+	 Now, consider an arbitrary vector $w \in W$. Since T is onto, there exists a vector $v \in V$ such that $T(v) = w$. By the spanning property of $S \in V$, we can express v as a linear combination of vectors in  S:
+	 
+	 $v = c_1s_1 + c_2s_2 + .... + c_ns_n$
+	 
+	 Now, apply T to both sides:
+	 $w = T(v) = c_1T(s_1) + c_2T(s_2) + ..... + c_nT(s_n)$
+	 
+	 This shows that w can be expressed as a linear combination of vectors in $T(S)$. Since w was arbitrary, it follows that $T(S)$ is a spanning set for W.
+	 
+	 Therefore, if 	T is onto and $S \subset V$  is a spanning set for V, then $T(S)$ is a spanning set for W.
+	\end{enumerate}
+\end{enumerate}
+
+\section{Solution of Exercise 2}
+Let $P_2$ be the set of polynomials of degree less or equal to two and  \\
+
+\begin{center}
+$T : \mathbb{P}_2 \longrightarrow \mathbb{P}_2$  \\
+     \qquad $f \longmapsto f^{'}$
+     
+    be a linear map. Consider the family:
+    
+    $\beta_{\mathbb{P}_2} = \{2 + x, 1 + x, \frac{1}{2}x^2\}$ 
+        
+\end{center}
+\begin{enumerate}
+	\item[a)]  Prove that $\beta_{\mathbb{P}_2}$ is a basis of $\mathbb{P}_{2}$.
+	The first thing to do is prove that the vectors in $\beta_{\mathbb{P}_2}$ are linearly independent. 
+	We want to show that for scalars,  $c_1,c_2, c_3$, if $c_1(2 + x) + c_2(1 + x) + c_3(\frac{1}{2}x^2) = 0 ,\quad then \quad \\ c_1 = c_2 = c_3 = 0$
+	
+	$c_1(2 + x) + c_2(1 + x) + c_3(\frac{1}{2}x^2) = 0$
+	
+	Expand this equation:
+	
+	$2c_1 + c_2 + \frac{1}{2}c_3x^2 + (c_1 + c_2)x = 0 $
+	
+	The only way for this polynomial to be identically zero for all x is if each coefficient is zero.\\ So, we set each coefficient to zero:
+	\[
+	\left\{
+	\begin{array}{r c l}
+	2c_1 + c_2 &= 0 \\
+	c_1 + c_2 &= 0 \\
+	\frac{1}{2}c_3 &= 0 
+	\end{array}
+	\right.
+	\]
+	The solutions to this system are $c_1 = c_2 = c_3 = 0$ , which means that the vectors in $\beta_{\mathbb{P}_2}$	are linearly independent.
+	
+	The second condition is to show that $\beta_{\mathbb{P}_2}$ Spanning set: Any polynomial 
+	$f$ in $\mathbb{P}_2$ can be expressed as a linear combination of vectors in $\beta_{\mathbb{P}_2}$.
+	
+	It is not necessary to prove the second condition, because $\beta_{\mathbb{P}_2}$ dimension is equal to three and vectors of $\beta_{\mathbb{P}_2}$ are linearly independent, then we can conclude that $\beta_{\mathbb{P}_2}$ spans $\mathbb{P}_2$.
+	
+	\item[b)] Determine the matrix $M_T$ of the map T  with respect to the basis  to the basis $\beta_{\mathbb{P}_2}$.
+	
+	To find the matrix representation of f with respect to the canonical basis $\gamma = {e_1,e_2,e_3}$ where $e_1 = (1,0,0), e_2 = (0,1,0) and e_3 = (0,0,1)$ 1), we
+	apply f to each vector in $\gamma$.
+	$T(e_1) = (2,1,0) = 2e_1 + e_2 $\\
+	$T(e_2) = (1,1,0) = e_1 + e_2 $\\
+	$T(e_3) = (0,0,\frac{1}{2}) = \frac{1}{2}e_3 $\\
+	Therefore, the matrix $M_T$ representing f with respect to $\gamma$ is:
+	
+	\[
+	M_T = 
+	\begin{bmatrix}
+	2 & 1 & 0 \\
+	1 & 1 & 0  \\
+	0 & 0 & \frac{1}{2}
+	\end{bmatrix}
+	\]
+	
+\end{enumerate}
+
+\section{Solution of exercice 3 }
+Is the set of matrices over a field $K$ with m rows and n columns, denoted by
+$M_{m×n}\mathbb{(K)}$, a vector space? Justify your answer clearly
+
+To show this, we need to verify the ten axioms of a vector space. Here's a brief justification for each axiom:
+\begin{enumerate}
+	\item[1.] \text{Closure under Addition:}
+		\begin{itemize}
+			\item[.] If A and B are matrices in $M_{m×n}\mathbb{(K)}$, then $A + B$ is also in $M_{m×n}\mathbb{(K)}$ because the sum of two $mxn$ matrices is still an $mxn$ matrix.	
+		\end{itemize}
+   \item[2.] \text{Associativity of Addition:}
+	   \begin{itemize}
+	   	\item[.] Matrix addition is associative, i.e., $(A + B) + C = A + (B + C) $ for any matrices A, B and C in $M_{m×n}\mathbb{(K)}$.	
+	   \end{itemize}
+    \item[3.] \text{Existence of an Additive Identity:}
+	  \begin{itemize}
+	  	\item[.]The zero matrix (O), where all entries are zero, serves as the additive identity. For any matrix A in $M_{m×n}\mathbb{(K)}$, we have $A + 0 = A$	
+	  \end{itemize}
+    \item[4.] \text{Existence of Additive Inverses:}
+      \begin{itemize}
+      	\item[.]For any matrix in $M_{m×n}\mathbb{(K)}$,, the additive inverse ?A exists, and $A + (-A)  = 0$.	
+      \end{itemize}
+    \item[5.] \text{Closure under Scalar Multiplication:}
+	  \begin{itemize}
+	  	\item[.]If A is a matrix in $M_{m×n}\mathbb{(K)}$ and c is a scalar in K, then $cA$ is also in $M_{m×n}\mathbb{(K)}$ because scalar multiplication of a matrix by a scalar produces another matrix of the same size. 
+	  \end{itemize}
+	\item[6.] \text{Compatibility of Scalar Multiplication with Field Multiplication:}
+		\begin{itemize}
+			\item[.]Scalar multiplication is compatible with field multiplication, i.e., $(cd)A = c(dA)$ for any scalars c and d in $K$ and any matrix $A \in M_{mxn}\mathbb{(K)}$.
+		\end{itemize}
+	\item[7.] \text{Identity Element for Scalar Multiplication:}
+		\begin{itemize}
+			\item[.]The identity element for scalar multiplication is 1 in the field $K.1A = A$  for any matrix $A \in  M_{mxn}\mathbb{(K)} $
+		\end{itemize}
+	\item[8.] \text{Distributivity of Scalar Multiplication with Respect to Vector Addition:}
+		\begin{itemize}
+			\item[.]Scalar multiplication distributes over vector addition, i.e., $c(A + B) = cA + cB $ for any scalar c and matrices $A and B \in M_{mxn}\mathbb{(K)}$.
+			 $K.1A = A$  for any matrix $A \in  M_{mxn}\mathbb{(K)} $
+		\end{itemize}
+	\item[9.] \text{Distributivity of Scalar Multiplication with Respect to Field Addition:}
+		\begin{itemize}
+			\item[.]Scalar multiplication distributes over field addition, i.e.,  $(c + d)A = cA + dA$  for any scalars c and d in for any scalar c and d $\in K$ and any matrix $A \in  M_{mxn}\mathbb{(K)}$.
+		\end{itemize}
+    \item[10.] \text{Compatibility of Scalar Multiplication with Matrix Multiplication:}
+	    \begin{itemize}
+	    	\item[.]Scalar multiplication is compatible with matrix multiplication, i.e.,  $(cd)A = c(dA)$  for any scalars c and d in for any scalar c and d $\in K$ and any matrix $A \in  M_{mxn}\mathbb{(K)}$ for any scalars c and d $\in K$ and any matrix .$A \in M_{mxn}\mathbb{(K)}$.
+	    \end{itemize}
+Since all ten axioms are satisfied, $M_{mxn}\mathbb{(K)}$ is indeed a vector space over the field K
+\end{enumerate}  
+
+
+      
+
+
+
+
+
+%{\footnotesize
+%\begin{thebibliography}{99}
+%\bibitem{wik} Wikipedia, \emph{Fundamental theorem of calculus},\\  \href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus}{https://en.wikipedia.org/wiki/Fundamental\_theorem\_of\_calculus}
+%\bibitem{fancy}For page style, \href{http://www.emerson.emory.edu/services/latex/latex_129.html}{http://www.emerson.emory.edu/services/latex/latex\_129.html}
+%\bibitem{header} Headers and footers, \href{https://www.overleaf.com/learn/latex/Headers_and_footers}{https://www.overleaf.com/learn/latex/Headers\_and\_footers}
+%\end{thebibliography}
+%}
+
+%%\nocite{*}
+%\bibliographystyle{amsalpha}
+%%\bibliographystyle{ieeetr-alpha-fr}
+%%\bibliographystyle{spr-mp-nameyear-cnd}
+%{\footnotesize\bibliography{biblio}}
+
+\end{document}

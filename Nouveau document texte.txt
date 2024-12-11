@@ -1,0 +1,11 @@
+Question 1
+Portfolio A:
+.at t buy a call with strike K and expiry T
+. invest a cash amount Ke^-r(T-t)
+
+Portfolio B:
+. at t buy with series strike K and expiry T
+. Buy and hold share S_t
+
+Using the no arbitrage condition and Portfolio A and B above, derive the relation:
+c_t - p_t = S_t - Ke^-r(T-t)

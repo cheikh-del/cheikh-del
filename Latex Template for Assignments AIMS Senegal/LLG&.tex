@@ -1,0 +1,167 @@
+\documentclass{article}
+\usepackage{authblk}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+
+\title{REVIEW: The fascinating world of the Landau–Lifshitz–Gilbert equation: an overview}
+\author{M. Lakshmanan\thanks{Centre for Nonlinear Dynamics, Department of Physics, Bharathidasan University, Tiruchirapalli 620 024, India}}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Introduction}
+	Spin systems generally refer to ordered magnetic systems. Specifically, spin angular momentum or spin is an intrinsic property associated with quantum particles, which does not have a classical counterpart. Macroscopically, all substances are magnetic to some extent and every material when placed in a magnetic field acquires a magnetic moment or magnetization. In analogy with the relation between the dipole moment of a current loop in a magnetic field and orbital angular momentum of a moving electron, one can relate the magnetic moment/magnetization with the expectation value of the spin angular momentum operator, which one may call simply as spin. In ferromagnetic materials, the moment of each atom and even the average is not zero. These materials are normally made up of domains, which exhibit long-range ordering that causes the spins of the atomic ions to line up parallel to each other in a domain. The underlying interaction \cite{reference} originates from a spin–spin exchange interaction that is caused by the overlapping of electronic wave functions. Additional interactions that can influence the magnetic structures include magnetocrystalline anisotropy, applied magnetic field, demagnetization field, biquadratic exchange and other weak interactions. Based on phenomenological grounds, by including effectively the above types of interactions, Landau \& Lifshitz \cite{landau} introduced the basic dynamical equation for magnetization or spin $S(\mathbf{r}, t)$ in bulk materials, where the effect of relativistic interactions was also included as a damping term. In 1954, Gilbert \cite{gilbert} introduced a more convincing form for the damping term, based on a Lagrangian approach, and the combined form is now called the Landau–Lifshitz–Gilbert (LLG) equation, which is a fundamental dynamical system in applied magnetism. 
+	
+	\section{Macroscopic dynamics of spin systems and LLG equation}
+	To start with, in this section we will present a brief account of the phenomenological derivation of the LLG equation starting with the equation of motion of a magnetization vector in the presence of an applied magnetic field \cite{landau}. Then this analysis is extended to the case of a lattice of spins and its continuum limit, including the addition of a phenomenological damping term, to obtain the LLG equation.
+	
+	\subsection*{(a) Single spin dynamics}
+	Consider the dynamics of the spin angular momentum operator $S$ of a free electron under the action of a time-dependent external magnetic field with the Zeeman term given by the Hamiltonian
+	
+	\begin{equation}
+	K_5 = \frac{g\mu_B}{\hbar} S \cdot B(t), \quad B(t) = \mu_0 H(t),
+	\end{equation}
+	
+	where $g$, $\mu_B$, and $\mu_0$ are the gyromagnetic ratio, Bohr magneton, and permeability in vacuum, respectively. Then, from the Schrödinger equation, the expectation value of the spin operator can be easily shown to satisfy the dynamical equation, using the angular momentum commutation relations, as
+	
+	\begin{equation}
+	\frac{d}{dt} \langle S(t) \rangle = \frac{g\mu_B}{\hbar} \langle S(t) \rangle \times B(t).
+	\end{equation}
+	
+	Now let us consider the relation between the classical angular momentum $L$ of a moving electron and the dipole moment $M_e$ of a current loop immersed in a uniform magnetic field, $M_e = (e/2m) L$, where $e$ is the charge and $m$ is the mass of the electron. Analogously, one can define the magnetization $M = (g\mu_B/\hbar)\langle S \rangle \equiv \gamma \langle S \rangle$, where $g = g\mu_B/\hbar$. Then considering the magnetization per unit volume, $M$, from equation (2.2) one can write the evolution equation for the magnetization as
+	
+	\begin{equation}
+	\frac{dM}{dt} = -\gamma_0 [M(t) \times H(t)],
+	\end{equation}
+	
+	where $B = \mu_0 H$ and $\gamma_0 = \mu_0 \gamma$.
+	
+	From equation (2.3), it is obvious that $M \cdot M = \text{const.}$ and $M \cdot H = \text{const.}$. Consequently, the magnitude of the magnetization vector remains constant in time, while it processes around the magnetic field $H$ making a constant angle with it. Defining the unit magnetization vector
+	
+	\begin{equation}
+	S(t) = \frac{M(t)}{|M(t)|}, \quad S^2 = 1, \quad \text{and} \quad S = (S^x, S^y, S^z),
+	\end{equation}
+	
+	which we will call simply as spin hereafter, one can write down the spin equation of motion as
+	
+	\begin{equation}
+	\frac{dS(t)}{dt} = -\gamma_0 [S(t) \times H(t)],
+	\end{equation}
+	
+	and the evolution of the spin can be schematically represented as in figure 1a.
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.5\textwidth]{C:/Users/Cheikh/Pictures/LLG/im1.png}
+		\caption{Evolution of a single spin (a) in the presence of a magnetic field and (b) when damping is included.}
+		\label{fig:spin_evolution}
+	\end{figure}
+	
+	It is well known that experimental hysteresis curves of ferromagnetic substances clearly show that beyond certain critical values of the applied magnetic field, the magnetization saturates, becomes uniform and aligns parallel to the magnetic field. In order to incorporate this experimental fact, from phenomenological grounds one can add a damping term suggested by Gilbert \cite{gilbert} so that the equation of motion can be written as
+	\begin{equation}
+	\frac{d\mathbf{S}(t)}{dt} = -\gamma_0[\mathbf{S}(t) \times \mathbf{H}(t)] + \lambda\mu_0 S \times \frac{dS}{dt}, \quad \lambda \ll 1
+	\end{equation}
+	
+	On substituting the expression (2.6) again for $\frac{dS}{dt}$ in the third term of equation (2.6), it can be rewritten as
+	\begin{equation}
+	(1+\lambda^2\gamma_0)\frac{d\mathbf{S}}{dt} = -\gamma_0[\mathbf{S}(t) \times \mathbf{H}(t)] - \lambda \gamma_0 \mathbf{S} \times [\mathbf{S} \times \mathbf{H}(t)]
+	\end{equation}
+	
+	After a suitable re-scaling of $t$, equation (2.6) can be rewritten as
+	\begin{equation}
+	\frac{d\mathbf{S}}{dt} = (\mathbf{S} \times \mathbf{H}(t)) + \lambda \mathbf{S} \times (\mathbf{S} \times \mathbf{H}(t)) = \mathbf{S} \times \mathbf{H}_{\text{eff}}
+	\end{equation}
+	
+	Where $\mathbf{H}_{\text{eff}} = \mathbf{H}(t) + \lambda \mathbf{S} \times \mathbf{H}$. The effect of damping is shown in figure \ref{fig:spin_evolution}(b). Note that in equation (2.7) again the constancy of the length of the spin is maintained. Equation (2.7) is the simplest form of the LLG equation, which represents the dynamics of a single spin in the presence of an applied magnetic field $\mathbf{H}(t)$.
+	
+	\textbf{(b) Dynamics of lattice of spins and continuum case}
+	
+	The above phenomenological analysis can be easily extended to a lattice of spins representing a ferromagnetic material. For simplicity, considering a one-dimensional lattice of $N$ spins with nearest neighbor interactions, onsite anisotropy, demagnetizing field, applied magnetic field, etc., the dynamics of the $i$-th spin can be written down in analogy with the single spin as the LLG equation.
+	\begin{align}
+	\frac{{d\mathbf{S}_i}}{{dt}} &= \mathbf{S}_i \times \mathbf{H}_{\text{eff}}, \quad i = 1, 2, \ldots, N, \quad (2.9) \nonumber \\
+	&\text{where} \quad \mathbf{H}_{\text{eff}} = \left( \mathbf{S}_{i+1} + \mathbf{S}_{i-1} + AS_{ix}\mathbf{n}_x + BS_{iy}\mathbf{n}_y + CS_{iz}\mathbf{n}_z + H(t) + \ldots \right) \nonumber \\
+	&\quad - l \left\{ \mathbf{S}_{i+1} + \mathbf{S}_{i-1} + AS_{ix}\mathbf{n}_x + BS_{iy}\mathbf{n}_y + CS_{iz}\mathbf{n}_z + H(t) + \ldots \right\} \times \mathbf{S}_i. \quad (2.10) \nonumber \\
+	&\text{Here} \quad A, B, C \text{ are anisotropy parameters and } \mathbf{n}_x, \mathbf{n}_y, \mathbf{n}_z \text{ are unit vectors along the} \nonumber \\ 
+	&x, y \text{ and } z \text{ directions, respectively.} \nonumber \\
+	\begin{split}
+	&\text{One can include other types of interactions like biquadratic exchange,} \\
+	&\text{spin-phonon coupling, dipole interactions, etc.} \nonumber \\
+	&\text{Also, equation (2.9) can be generalized to the case of square and cubic}  \nonumber \\
+	&\text{lattices as well, where the index } i \text{ has to be replaced by the appropriate lattice vector } i. \nonumber \\
+	&\text{In the long wavelength and low temperature limit, that is in the continuum limit, one can write}
+	\end{split} \nonumber \\
+	&\mathbf{S}_i(t) = \mathbf{S}(r, t), \quad r = (x, y, z) \nonumber \\
+	&\text{and} \quad \mathbf{S}_{i+1} + \mathbf{S}_{i-1} = \mathbf{S}(r, t) + a \cdot \mathbf{VS} + \frac{a^2}{2}V^2S + \text{higher orders} \nonumber \\
+	&(a \text{ is a lattice vector}) \nonumber \\
+	&\text{so that the LLG equation takes the form of a vector nonlinear partial differential equation (as } a \rightarrow 0), \nonumber \\
+	\frac{\partial \mathbf{S}(r, t)}{\partial t} &= \left( \mathbf{S} \times \left[ V^2\mathbf{S} + AS_x \mathbf{n}_x + BS_y \mathbf{n}_y + CS_z \mathbf{n}_z + H(t) + \ldots \right] \right) \nonumber \\
+	&+ l \left[ \left( V^2\mathbf{S} + AS_x \mathbf{n}_x + BS_y \mathbf{n}_y + CS_z \mathbf{n}_z + H(t) + \ldots \right) \times \mathbf{S}(r, t) \right] \nonumber \\
+	&= \mathbf{S} \times \mathbf{H}_{\text{eff}}. \quad (2.12) \nonumber \\
+	&\text{and} \quad \mathbf{S}(r, t) = (S_x(r, t), S_y(r, t), S_z(r, t)), \quad S^2 = 1. \quad (2.13) \nonumber
+	\end{align}
+	
+	In fact, equation (2.12) was deduced from phenomenological grounds for bulk magnetic materials by Landau \& Lifshitz \cite{landau}.
+	\textbf{(c) Hamiltonian structure of the LLG equation in the absence of damping}
+	The dynamical equations for the lattice of spins (2.9) in one dimension (as well as in higher dimensions) possess a Hamiltonian structure in the absence of damping.
+	Defining the spin Hamiltonian
+	\begin{equation}
+	H_s = - \sum_{\langle i,j \rangle} S_i \cdot S_{i+1} + A(S_{ix})^2 + B(S_{iy})^2 + C(S_{iz})^2 + m(H(t) \cdot S_i) + \ldots \quad (2.14)
+	\end{equation}
+	and the spin Poisson brackets between any two functions of spin $A$ and $B$ as
+	\begin{equation}
+	\{A, B\} = \sum_{a,b,g=1}^3 \varepsilon_{abg} \frac{\partial A}{\partial S_a} \frac{\partial B}{\partial S_b} S_g, \quad (2.15)
+	\end{equation}
+	
+\begin{align}
+\frac{d\mathbf{S}_i}{dt} &= \mathbf{S}_i \times \mathbf{H}_{\text{eff}}, \quad i = 1, 2, \ldots, N , \quad (2.9) \nonumber \\
+\text{where } \mathbf{H}_{\text{eff}} &= \left( \mathbf{S}_{i+1} + \mathbf{S}_{i-1} + AS_{ix} \mathbf{n}_x + BS_{iy} \mathbf{n}_y + CS_{iz} \mathbf{n}_z + H(t) + \ldots \right) \nonumber \\
+&\quad - l \left( \mathbf{S}_{i+1} + \mathbf{S}_{i-1} + AS_{ix} \mathbf{n}_x + BS_{iy} \mathbf{n}_y + CS_{iz} \mathbf{n}_z + H(t) + \ldots \right) \times \mathbf{S}_i . \quad (2.10) \nonumber \\
+\text{Here } A, B, C &\text{ are anisotropy parameters and } \mathbf{n}_x, \mathbf{n}_y, \mathbf{n}_z \text{ are unit vectors along the} \nonumber \\
+&x, y \text{ and } z \text{ directions, respectively.} \nonumber \\
+\begin{split}
+&\text{One can include other types of interactions like biquadratic exchange,} \\
+&\text{spin-phonon coupling, dipole interactions, etc.} \nonumber \\
+&\text{Also, equation (2.9) can be generalized to the case of square and cubic lattices as well, where the index } i \text{ has to be replaced by the appropriate lattice vector } i. \nonumber \\
+&\text{In the long wavelength and low temperature limit, that is in the continuum limit, one can write}
+\end{split} \nonumber \\
+\mathbf{S}_i(t) &= \mathbf{S}(r, t), \quad r = (x, y, z) \nonumber \\
+\text{and } \mathbf{S}_{i+1} + \mathbf{S}_{i-1} &= \mathbf{S}(r, t) + a \cdot \mathbf{VS} + \frac{a^2}{2}V^2S + \text{higher orders} \nonumber \\
+&(a \text{ is a lattice vector}) \nonumber \\
+&\text{so that the LLG equation takes the form of a vector nonlinear partial differential equation (as } a \rightarrow 0), \nonumber \\
+\frac{\partial \mathbf{S}(r, t)}{\partial t} &= \left( \mathbf{S} \times \left[ V^2\mathbf{S} + AS_x \mathbf{n}_x + BS_y \mathbf{n}_y + CS_z \mathbf{n}_z + H(t) + \ldots \right] \right) \nonumber \\
+&+ l \left( \left[ V^2\mathbf{S} + AS_x \mathbf{n}_x + BS_y \mathbf{n}_y + CS_z \mathbf{n}_z + H(t) + \ldots \right] \times \mathbf{S}(r, t) \right) \nonumber \\
+&= \mathbf{S} \times \mathbf{H}_{\text{eff}} . \quad (2.12) \nonumber \\
+&\text{and } \mathbf{S}(r, t) = (S_x(r, t), S_y(r, t), S_z(r, t)), \quad S^2 = 1 . \quad (2.13) \nonumber
+\end{align}
+
+In fact, equation (2.12) was deduced from phenomenological grounds for bulk magnetic materials by Landau \& Lifshitz \cite{landau}.
+
+(c) Hamiltonian structure of the LLG equation in the absence of damping:
+
+The dynamical equations for the lattice of spins (2.9) in one dimension (as well as in higher dimensions) possess a Hamiltonian structure in the absence of damping. Defining the spin Hamiltonian
+\begin{equation}
+H_s = - \sum_{\langle i,j \rangle} \mathbf{S}_i \cdot \mathbf{S}_{i+1} + A(S_{ix})^2 + B(S_{iy})^2 + C (S_{iz})^2 + m(H(t) \cdot \mathbf{S}_i) + \ldots \quad (2.14)
+\end{equation}
+and the spin Poisson brackets between any two functions of spin $A$ and $B$ as
+\begin{equation}
+\{A, B\} = \sum_{a,b,g=1}^3 \varepsilon_{abg} \frac{\partial A}{\partial S_a} \frac{\partial B}{\partial S_b} S_g, \quad (2.15)
+\end{equation}
+
+	
+	In fact, equation (2.12) was deduced from phenomenological grounds for bulk magnetic materials by Landau \& Lifshitz \cite{landau}.
+	
+	(c) Hamiltonian structure of the LLG equation in the absence of damping:
+	
+	The dynamical equations for the lattice of spins (2.9) in one dimension (as well as in higher dimensions) possess a Hamiltonian structure in the absence of damping. Defining the spin Hamiltonian
+	\begin{equation}
+	H_s = - \sum_{\langle i,j \rangle} \mathbf{S}_i \cdot \mathbf{S}_{i+1} + A(S_{ix})^2 + B(S_{iy})^2 + C (S_{iz})^2 + m(H(t) \cdot \mathbf{S}_i) + \ldots \quad (2.14)
+	\end{equation}
+	and the spin Poisson brackets between any two functions of spin $A$ and $B$ as
+	\begin{equation}
+	\{A, B\} = \sum_{a,b,g=1}^3 \varepsilon_{abg} \frac{\partial A}{\partial S_a} \frac{\partial B}{\partial S_b} S_g, \quad (2.15)
+	\end{equation}
+\end{document}

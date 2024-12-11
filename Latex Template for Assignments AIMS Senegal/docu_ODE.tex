@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow,multicol}
+\usepackage{pifont,hyperref,lastpage,fancyhdr,movie15,float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% Footer and Header %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}                                                     %%%
+\fancyhf{} 	                                                      %%%
+\lfoot{\tiny\textsf{\includegraphics[width=1.8cm]{AIMSSenegalLogo}    %%%
+Po.Box~1418 Mbour-Thies,~phone~{(+221) 33 956 7693},~                 %%%
+\url{http://www.aims-senegal.org}}}                                   %%%
+\rfoot{\bfseries Page \thepage~of \pageref{LastPage}}                 %%%
+\renewcommand{\footrulewidth}{1.pt}\renewcommand{\headrulewidth}{0pt} %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Fill here information about the present assignment %%%%%%%%%%%%%%
+\newcommand{\code}{[Your Code]}                                       %%%
+\newcommand{\deadline}{[Date, Time]}                                  %%%
+\newcommand{\assignment}{assignment [x] ON [Course Name]}			  %%% 
+\newcommand{\lecturer}{Lecturer: [Lecturer Name]}                     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%  Title at the first page  %%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace*{-4cm}\begin{minipage}{\textwidth}                     %%%
+\begin{center}                                                        %%%
+\begin{tabular}{|c|c|c|}                                              %%%
+\hline\multicolumn{3}{|c|}{\bf\scriptsize\MakeUppercase\assignment}\\ %%%
+\hline{\small Student's Code}&                                        %%%
+\multirow{3}{7cm}{\includegraphics[width=7.5cm,height=2.3cm]{AIMSSenegalLogo}} %%%
+& {\small Deadline}\\                                                 %%%
+\cline{1-1}\cline{3-3}{\small\bf\code}&&{\small\bf\deadline} \\       %%%
+\cline{1-1}\cline{3-3}{\small\today} &&{\small2019-2020}\\            %%%
+\hline\multicolumn{3}{|r|}{\scriptsize\lecturer}\\\hline              %%%
+\end{tabular}                                                         %%%
+\end{center}                                                          %%%
+\end{minipage}\hfill\date{}\vspace*{-1cm}}                            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newtheorem{theo}{Theorem}
+\newtheorem{defi}{Definition}
+\newenvironment{proof}[1][Proof.]{\textbf{#1~}}{\ \rule{0.5em}{0.5em}}
+
+\begin{document}
+\maketitle\thispagestyle{fancy}
+
+\section{Solution of Exercise 1}
+ If we assume that the probability of to choose blue and red are same. Then we have 1/2 for two balls. This is called 'equiprobability'.
+\begin{enumerate}
+	\item[1] Pour r\'esoudre l'\'equation de Korteweg-de Vries (KdV) num\'eriquement à l'aide de diff\'erences finies, nous pouvons utiliser un schéma de différences centrales dans l'espace et un sch\'ema de diff\'erences inverses dans le temps. Discr\'etisons les d\'riv\'es spatiales et temporelles à l'aide de diff\'erences centrales pr\'ecises du second ordre :
+	
+	L'equation de KdV est donn\'ee par :
+	
+    $\frac{\partial u}{\partial t} + 6u\frac{\partial u}{\partial x} + \frac{\partial^{3}u}{\partial x^{3}} = 0$ \newline Les approximations par diff\'erences finies sont les suivantes:
+    
+    $\frac{\partial u}{\partial t} \approx = \frac{u_{i}^{n+1} - u_{i}^{n}}{\Delta t}$ 
+    
+    $\frac{\partial u}{\partial x} \approx = \frac{u_{i+1}^{n} - u_{i-1}^{n}}{2\Delta x}$ 
+    
+    $\frac{\partial^{3} u}{\partial x^{3}} \approx = \frac{u_{i+2}^{n} - 2u_{i+1}^{n} + 2u_{i-1}^{n} - u_{i-2}^{n}}{(\Delta x)^{3}}$ 
+    
+    En les substituant dans l\'equation de KdV et en les r\'earrangeant, on obtient :
+    
+    $\frac{u_{i}^{n+1} - u_{i}^{n}}{\Delta t} + 6u_{i}^n\frac{u_{i+1}^{n} - u_{i-1}^{n}}{2\Delta x} + \frac{u_{i+2}^{n} - 2u_{i+1}^{n} + 2u_{i-1}^{n} - u_{i-2}^{n}}{(\Delta x)^{3}} = 0$
+    
+    R\'esoudre pour $u_{i}^{n+1}$  on a :
+    
+    $u_{i}^{n+1} = u_{i}^{n} - \frac{\Delta t}{\Delta x}(3u_{i}^{n}(u_{i+1}^{n} - u_{i-1}^{n}))$
+\end{enumerate}
+
+
+The maximum displacement of a mass oscillating about its equilibrium position 0.2m, and its maximum speeds is 1.2m/s. What is the period $\tau$ of its oscillations? 
+
+\begin{theo}
+	Nothing is easy in this world!
+\end{theo}
+
+
+
+\end{document}
